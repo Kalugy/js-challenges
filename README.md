@@ -1,6 +1,6 @@
 # Daily JavaScript Exercises
 
-Welcome to the **Daily JavaScript Exercises** repository! This project is designed to help developers practice and memorize JavaScript methods and concepts through daily coding challenges. Whether you're a beginner or looking to sharpen your skills, this repository offers a structured way to enhance your JavaScript knowledge.
+Welcome to the **js JavaScript Exercises** repository! This project is designed to help developers practice and memorize JavaScript methods and concepts through daily coding challenges. Whether you're a beginner or looking to sharpen your skills, this repository offers a structured way to enhance your JavaScript knowledge.
 
 ## Table of Contents
 - [Features](#features)
@@ -27,7 +27,7 @@ To work with this repository, ensure you have the following:
 
 ### Clone the Repository
 ```bash
-git clone https://github.com/your-username/daily-js-exercises.git
+git clone ...
 ```
 
 ### Navigate to the Project
