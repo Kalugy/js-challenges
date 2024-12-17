@@ -1,26 +1,6 @@
 import React, { createContext, useContext, useEffect, useState } from "react";
 
-// Default theme values
-const themes = {
-  light: { 
-    background: "#ffffff", 
-    textColor: "#000000",
-    navbarBg: "#111111",
-    secondaryBg: "#a01c1c"
-  },
-  dark: { 
-    background: "#000000", 
-    textColor: "#ffffff",
-    navbarBg: "#111111",
-    secondaryBg: "#a01c1c"
-  },
-  custom: { 
-    background: "#f0f0f0", 
-    textColor: "#333333",
-    navbarBg: "#111111",
-    secondaryBg: "#a01c1c"
-  },
-};
+import { themes } from "../constants/generalContants";
 
 // Create ThemeContext
 const ThemeContext = createContext();

@@ -1,8 +1,10 @@
 import React from "react";
+import { useTheme } from "../../context/ThemeContext";
 
 const ChallengeList = ({ data, handleEdit, handleDelete }) => {
+  const { theme } = useTheme()
   return (
-    <div className="bg-white shadow rounded p-4">
+    <div className=" shadow rounded p-4">
       <h2 className="text-lg font-semibold mb-4">Challenges</h2>
       <table className="w-full border-collapse">
         <thead>
@@ -22,18 +24,24 @@ const ChallengeList = ({ data, handleEdit, handleDelete }) => {
               <td className="border p-2">{item.dificult}</td>
               <td className="border p-2">{item.method} - {item.function}</td>
               <td className="border p-2">
-                <button
-                  className="bg-yellow-500 text-white px-2 py-1 rounded mr-2"
+                {/* <button
+                  className="  px-2 py-1 rounded mr-2"
+                  style={{
+                    backgroundColor: theme.btnAlertColor,
+                  }}
                   onClick={() => handleEdit(item)}
                 >
                   Edit
                 </button>
                 <button
-                  className="bg-red-500 text-white px-2 py-1 rounded"
+                  className="  px-2 py-1 rounded"
+                  style={{
+                    backgroundColor: theme.btnDangerColor,
+                  }}
                   onClick={() => handleDelete(item.id)}
                 >
                   Delete
-                </button>
+                </button> */}
               </td>
             </tr>
           ))}

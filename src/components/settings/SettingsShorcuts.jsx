@@ -1,6 +1,8 @@
 import React, { useState } from "react";
+import { useTheme } from "../../context/ThemeContext";
 
-export default function Settings() {
+export default function SettingsShorcuts() {
+  const { theme } = useTheme()
   // Initial shortcut settings
   const [shortcuts, setShortcuts] = useState({
     previousChallenge: "Ctrl + ArrowLeft",
@@ -15,8 +17,14 @@ export default function Settings() {
   };
 
   return (
-    <div className="max-w-2xl mx-auto p-4 bg-gray-50 border rounded-md shadow-md">
-      <h2 className="text-2xl font-bold mb-4">Shortcut Settings</h2>
+    <div 
+      className="max-w-2xl p-4 border rounded-md shadow-md"
+      style={{
+        backgroundColor: theme.secondaryBg,
+        color: theme.textColor
+      }}
+    >
+      <h2 className="text-2xl font-semibold mb-2">Challenges</h2>
 
       {/* Shortcuts List */}
       <div className="space-y-4">
@@ -57,7 +65,7 @@ function ShortcutRow({ label, value, onInputChange }) {
   return (
     <div className="flex justify-between items-center">
       <div>
-        <p className="font-semibold text-gray-700">{label}</p>
+        <p className="font-semibold ">{label}</p>
       </div>
       {/* Input for defining a custom shortcut */}
       <input

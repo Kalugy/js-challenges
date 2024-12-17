@@ -10,9 +10,23 @@ export default function SettingsTheme() {
     });
   };
 
+  const colorFields = [
+    { key: "background", label: "Background Color" },
+    { key: "secondaryBg", label: "Secondary Background Color" },
+    { key: "textColor", label: "Text Color" },
+    { key: "btnColor", label: "Button Color" },
+    { key: "btnDangerColor", label: "Danger Button Color" },
+    { key: "btnAlertColor", label: "Alert Button Color" },
+  ];
+
   return (
-    <div className={`p-4 border rounded-md text-[${theme.textColor}] bg-[${theme.background}]`}>
-      <h2 className="text-xl font-semibold mb-4">Customization Settings</h2>
+    <div 
+      className={`p-4 border rounded-md`}
+      style={{
+        backgroundColor: theme.secondaryBg,
+        color: theme.textColor
+      }}
+    >
 
       {/* Theme Selection */}
       <div className="mb-4">
@@ -20,7 +34,10 @@ export default function SettingsTheme() {
         <select
           value={themeSettings.currentTheme}
           onChange={(e) => updateTheme({ currentTheme: e.target.value })}
-          className="w-full p-2 border rounded"
+          className="w-full p-2 border rounded "
+          style={{
+            backgroundColor: theme.background
+          }}
         >
           <option value="light">Light</option>
           <option value="dark">Dark</option>
@@ -31,44 +48,29 @@ export default function SettingsTheme() {
       {/* Custom Settings (only for custom theme) */}
       {themeSettings.currentTheme === "custom" && (
         <>
-          {/* Background Color */}
-          <div className="mb-4">
-            <label className="font-medium block mb-1">Background Color</label>
-            <input
-              type="color"
-              value={themeSettings.customSettings.background}
-              onChange={(e) => handleCustomChange("background", e.target.value)}
-              className="w-full"
-            />
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            {colorFields.map((field) => (
+              <div key={field.key} className="mb-4">
+                <label className="font-medium block mb-1">{field.label}</label>
+                <input
+                  type="color"
+                  value={themeSettings.customSettings[field.key]}
+                  onChange={(e) => handleCustomChange(field.key, e.target.value)}
+                  className="w-full h-10 border rounded cursor-pointer"
+                />
+              </div>
+            ))}
           </div>
-          <div className="mb-4">
-            <label className="font-medium block mb-1">Secondary bg Color</label>
-            <input
-              type="color"
-              value={themeSettings.customSettings.secondaryBg}
-              onChange={(e) => handleCustomChange("secondaryBg", e.target.value)}
-              className="w-full"
-            />
-          </div>
-
-          {/* Text Color */}
-          <div className="mb-4">
-            <label className="font-medium block mb-1">Text Color</label>
-            <input
-              type="color"
-              value={themeSettings.customSettings.textColor}
-              onChange={(e) => handleCustomChange("textColor", e.target.value)}
-              className="w-full"
-            />
-          </div>
-
-          {/* Text Size */}
-          <div className="mb-4">
+{/* Text Size */}
+<div className="mb-4">
             <label className="font-medium block mb-1">Text Size</label>
             <select
-              value={themeSettings.customSettings.textSize}
+              value={themeSettings.currentTheme.textSize}
               onChange={(e) => handleCustomChange("textSize", e.target.value)}
               className="w-full p-2 border rounded"
+              style={{
+                backgroundColor: theme.background
+              }}
             >
               <option value="text-sm">Small</option>
               <option value="text-base">Normal</option>
@@ -77,8 +79,10 @@ export default function SettingsTheme() {
               <option value="text-2xl">2x Large</option>
             </select>
           </div>
+    
+          
         </>
       )}
-    </div>
+      </div>
   );
 }

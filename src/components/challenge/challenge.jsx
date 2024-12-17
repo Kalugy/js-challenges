@@ -1,6 +1,8 @@
 import { useState, useEffect } from "react";
 import challenges from "../../constants/challenge.json";
 
+import { useTheme } from "../../context/ThemeContext";
+
 export default function ChallengeComponent() {
   const [currentChallengeIndex, setCurrentChallengeIndex] = useState(0);
   const [userCode, setUserCode] = useState(challenges[currentChallengeIndex].template);
@@ -8,7 +10,7 @@ export default function ChallengeComponent() {
   const [showHint, setShowHint] = useState(false);
   const [counterRun, setCounterRun] = useState(0);
   const [points, setPoints] = useState(0);
-
+  const { theme } = useTheme()
   const currentChallenge = challenges[currentChallengeIndex];
 
   
@@ -94,7 +96,6 @@ export default function ChallengeComponent() {
   };
 
   const handleKeyDown = (event) => {
-    console.log('call', event)
     switch (event.key) {
       case "ArrowLeft":
         if (event.ctrlKey) {
@@ -122,20 +123,22 @@ export default function ChallengeComponent() {
   useEffect(() => {
     const listener = (event) => handleKeyDown(event); // Ensure proper function reference
     window.addEventListener("keydown", listener);
-    console.log('ohh i mounted')
     // Cleanup the event listener on unmount
     return () => {
-      console.log('ohh i UNmounted')
       window.removeEventListener("keydown", listener);
     };
   }, [currentChallengeIndex, counterRun]); // Empty dependency array ensures this runs only once
 
   return (
     <div className="p-6 max-w-4xl mx-auto">
-      {/* <h1 className="text-4xl font-bold text-center mb-4">Challenge</h1> */}
-      <div className="bg-yellow-100 p-4 rounded shadow-md mb-4">
+      <div 
+        className="p-4 rounded shadow-md mb-4"
+        style={{
+          backgroundColor: theme.secondaryBg,
+        }}
+      >
         <div className="flex gap-3">
-        <button
+        {/* <button
           onClick={handlePreviousChallenge}
           className={`bg-gray-500 text-white px-4 py-2 rounded hover:bg-gray-600 ${
             currentChallengeIndex === 0 ? "opacity-50 cursor-not-allowed" : ""
@@ -143,38 +146,49 @@ export default function ChallengeComponent() {
           disabled={currentChallengeIndex === 0}
         >
           {'<'}
-        </button>
+        </button> */}
         <h2 className="text-2xl font-semibold mb-2">Challenge {currentChallenge.id}</h2>
         <button
           onClick={handleNextChallenge}
-          className={`bg-green-500 text-white px-4 py-2 rounded hover:bg-green-600 ${
+          className={` px-4 py-2 rounded hover:bg-green-600 ${
             currentChallengeIndex >= challenges.length - 1 ? "opacity-50 cursor-not-allowed" : ""
           }`}
           disabled={currentChallengeIndex >= challenges.length - 1}
+          style={{
+            backgroundColor: theme.btnColor,
+          }}
         >
          {'>'}
         </button>
         </div>
-        <p className="text-gray-700 mb-1"><strong>Type:</strong> {currentChallenge.type}</p>
-        <p className="text-gray-700 mb-1"><strong>Method:</strong> {currentChallenge.method} - {currentChallenge.function}</p>
-        <h4 className="font-semibold text-md mb-2">Instructions: </h4>
-        <p className="text-gray-700  mb-2">{currentChallenge.instruction}</p>
+        <p className="mb-1"><strong>Type:</strong> {currentChallenge.type}</p>
+        <p className="mb-1"><strong>Method:</strong> {currentChallenge.method} - {currentChallenge.function}</p>
+        <h4 className="font-semibold  mb-2">Instructions: </h4>
+        <p className="mb-2">{currentChallenge.instruction}</p>
         <button
           onClick={handleHintToggle}
-          className="bg-yellow-500 text-white px-4 py-2 rounded hover:bg-yellow-600"
+          className=" px-4 py-2 rounded "
+          style={{
+            backgroundColor: theme.btnAlertColor,
+          }}
         >
           {showHint ? "Hide Hint" : "Show Hint"}
         </button>
       </div>
       
       {showHint && (
-        <div className="bg-blue-100 p-4 rounded shadow-md mb-4">
+        <div 
+          className="p-4 rounded shadow-md mb-4"
+          style={{
+            backgroundColor: theme.secondaryBg,
+          }}
+        >
           <h3 className="text-xl font-semibold mb-2">Hint</h3>
-          <p className="text-gray-700">{currentChallenge.hint}</p>
+          <p className="">{currentChallenge.hint}</p>
         </div>
       )}
       <div className="flex space-x-4">
-        <p className="text-md font-semibold">
+        <p className=" font-semibold">
           Points: {points} - 
           totalRuns: {counterRun}
           </p>
@@ -191,19 +205,29 @@ export default function ChallengeComponent() {
         }}
         rows="5"
         className="w-full p-2 border rounded mb-4"
+        style={{
+          backgroundColor: theme.secondaryBg,
+          color: theme.color
+        }}
       ></textarea>
       
       
       <div className="flex space-x-4">
         <button
           onClick={handleRun}
-          className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600"
+          className="px-4 py-2 rounded hover:bg-blue-600"
+          style={{
+            backgroundColor: theme.btnColor,
+          }}
         >
            Run
         </button>
         <button
           onClick={handleSubmit}
-          className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600"
+          className="px-4 py-2 rounded hover:bg-blue-600"
+          style={{
+            backgroundColor: theme.btnColor,
+          }}
         >
           Submit
         </button>

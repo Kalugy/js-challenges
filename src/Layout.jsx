@@ -2,6 +2,8 @@ import React from 'react';
 import { Outlet } from 'react-router-dom';
 import Navbar from './Navbar';
 import { useTheme } from './context/ThemeContext';
+import Footer from './Footer';
+
 export default function Layout() {
   const { theme } = useTheme();
   console.log('fdfdfd', theme.background)
@@ -13,6 +15,7 @@ export default function Layout() {
       style={{
         backgroundColor: theme.background,
         color: theme.textColor,
+        fontSize: theme.textSize
       }}
     >
       {/* Navbar at the top */}
@@ -24,7 +27,7 @@ export default function Layout() {
       </div>
 
       {/* Footer at the bottom */}
-      {/* <Footer /> */}
+      <Footer />
     </div>
   );
 }

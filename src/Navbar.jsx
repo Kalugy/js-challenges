@@ -1,20 +1,14 @@
 import React, { useState, useEffect } from "react";
 import { NavLink } from 'react-router-dom';
 import { useTheme } from "./context/ThemeContext";
+import { linkItems } from "./constants/generalContants";
+import ThemeSelectorButtons from "./components/rehusables/themeSelectorButtons";
+import HoverThemeButton from "./components/rehusables/hoverThemeButton";
 
 const Navbar = () => {
   const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [isScrolled, setScrolled] = useState(false);
   const { theme } = useTheme();
-
-  const menuItems = [
-    { name: "Home", href: "/" },
-    { name: "Challenge", href: "/challenge" },
-    { name: "Custom", href: "/custom" },
-    { name: "Setting", href: "/setting" },
-
-    // { name: "Start", href: "#start", isButton: true },
-  ];
 
 
   const handleMenuClick = () => {
@@ -34,7 +28,6 @@ const Navbar = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  console.log('theme', theme)
   return (
     <nav
       className={`fixed top-0 left-0 w-full z-50 transition duration-300 
@@ -56,7 +49,8 @@ const Navbar = () => {
 
         {/* Desktop Menu */}
         <div className="hidden md:flex gap-6 items-center">
-          {menuItems.map((item) =>
+          <HoverThemeButton/>
+          {linkItems.map((item) =>
             item.isButton ? (
               <NavLink 
                 key={item.name} 
@@ -77,6 +71,7 @@ const Navbar = () => {
               </NavLink>
             )
           )}
+          
         </div>
 
         {/* Mobile Burger Button */}
@@ -92,7 +87,10 @@ const Navbar = () => {
       <div
         className={`fixed overflow-y-hidden top-0 left-0 w-full h-full transform transition-transform duration-500 ease-in-out ${
           isMobileMenuOpen ? "translate-y-0" : "-translate-y-full"
-        } bg-[${theme.background}] text-[${theme.textColor}]`}
+        } ]`}
+        style={{
+          backgroundColor: isMobileMenuOpen ? theme.secondaryBg : "transparent",
+        }}
       >
         <BackgroundCircle />
           
@@ -103,7 +101,7 @@ const Navbar = () => {
           ✕
         </button>
         <ul className="flex flex-col items-center justify-center gap-6 h-full">
-          {menuItems.map((item) =>
+          {linkItems.map((item) =>
             item.isButton ? (
               <></>
               // <li key={item.name}>
@@ -128,6 +126,7 @@ const Navbar = () => {
               </li>
             )
           )}
+          <ThemeSelectorButtons/>
         </ul>
       </div>
     </nav>
