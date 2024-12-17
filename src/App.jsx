@@ -2,7 +2,8 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Layout from './Layout';
 import HomePage from './pages/HomePage';
 import ChallengePage from './pages/ChallengePage';
-import Custom from './pages/Custom';
+import CustomPage from './pages/CustomPage';
+import SettingsPage from './pages/SettingsPage';
 function App() {
   return (
     // <Router>
@@ -11,7 +12,8 @@ function App() {
           <Route index element={<HomePage />} /> 
           <Route path="/challenge" element={<ChallengePage />} />
           <Route path="/challenge/:id" element={<ChallengePage />} />
-          <Route path="/custom" element={<Custom />} />
+          <Route path="/custom" element={<CustomPage />} />
+          <Route path="/setting" element={<SettingsPage />} />
 
         </Route>
       </Routes>

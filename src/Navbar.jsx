@@ -1,45 +1,21 @@
 import React, { useState, useEffect } from "react";
 import { NavLink } from 'react-router-dom';
+import { useTheme } from "./context/ThemeContext";
 
 const Navbar = () => {
   const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [isScrolled, setScrolled] = useState(false);
+  const { theme } = useTheme();
 
   const menuItems = [
     { name: "Home", href: "/" },
     { name: "Challenge", href: "/challenge" },
     { name: "Custom", href: "/custom" },
+    { name: "Setting", href: "/setting" },
 
     // { name: "Start", href: "#start", isButton: true },
   ];
 
-  const theme = 'default'
-  const themeStyles = {
-    default: {
-      navbarBg: "bg-gray-200",
-      navbarText: "text-defaultText",
-      mobileBg: "bg-defaultBg",
-      hover: "hover:text-defaultHoverBg"
-    },
-    dark: {
-      navbarBg: "bg-darkCustomBg",
-      navbarText: "text-darkText",
-      mobileBg: "bg-darkBg",
-      hover: "hover:text-darkHoverBg"
-    },
-    blue: {
-      navbarBg: "bg-blueCustomBg",
-      navbarText: "text-blueText",
-      mobileBg: "bg-blueBg",
-      hover: "hover:text-blueHoverBg"
-    },
-    green: {
-      navbarBg: "bg-greenCustomBg",
-      navbarText: "text-greenText",
-      mobileBg: "bg-greenBg",
-      hover: "hover:text-greenHoverBg"
-    },
-  };
 
   const handleMenuClick = () => {
     setMobileMenuOpen(false); // Close the menu
@@ -58,17 +34,21 @@ const Navbar = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  console.log('theme', theme)
   return (
     <nav
-      className={`fixed top-0 left-0 w-full z-50 transition duration-300 ${
-        isScrolled ? themeStyles[theme].navbarBg: "bg-transparent"
-      }`}
+      className={`fixed top-0 left-0 w-full z-50 transition duration-300 
+        
+      `}
+      style={{
+        backgroundColor: isScrolled ? theme.secondaryBg : "transparent",
+      }}
     >
       <div className="container mx-auto flex items-center justify-between px-4 py-3">
         {/* Logo */}
         <div>
           <div className="flex ml-5 align-middle items-center">
-            <h1 className={`text-2xl font-bold ml-2 ${themeStyles[theme].navbarText}`}>
+            <h1 className={`text-2xl font-bold ml-2 text-[${theme.textColor}]`}>
               Js challenges
             </h1>
           </div>
@@ -81,7 +61,7 @@ const Navbar = () => {
               <NavLink 
                 key={item.name} 
                 to={item.href} 
-                className={`px-4 py-2 rounded transition button-${theme} ${themeStyles[theme].navbarText} hover:opacity-90`}
+                className={`px-4 py-2 rounded transition button-${theme} text-[${theme.textColor}] hover:opacity-90`}
                 //activeStyle={styles.activeLink}
                 >
                 {item.name}
@@ -90,7 +70,8 @@ const Navbar = () => {
               <NavLink
                 key={item.name}
                 to={item.href}
-                className={`font-semibold ${themeStyles[theme].navbarText} ${themeStyles[theme].hover}`}
+                className={`font-semibold text-[${theme.textColor}]`}
+                //make hover 
               >
                 {item.name}
               </NavLink>
@@ -100,7 +81,7 @@ const Navbar = () => {
 
         {/* Mobile Burger Button */}
         <button
-          className={`md:hidden text-xl ${themeStyles[theme].navbarText}`}
+          className={`md:hidden text-xl text-[${theme.textColor}]`}
           onClick={() => setMobileMenuOpen(!isMobileMenuOpen)}
         >
           ☰
@@ -111,13 +92,13 @@ const Navbar = () => {
       <div
         className={`fixed overflow-y-hidden top-0 left-0 w-full h-full transform transition-transform duration-500 ease-in-out ${
           isMobileMenuOpen ? "translate-y-0" : "-translate-y-full"
-        } ${themeStyles[theme].navbarBg} ${themeStyles[theme].navbarText}`}
+        } bg-[${theme.background}] text-[${theme.textColor}]`}
       >
         <BackgroundCircle />
           
         <button
           onClick={() => setMobileMenuOpen(false)}
-          className={`absolute top-4 right-6 text-3xl ${themeStyles[theme].navbarText}`}
+          className={`absolute top-4 right-6 text-3xl text-[${theme.textColor}]`}
         >
           ✕
         </button>
@@ -139,7 +120,8 @@ const Navbar = () => {
                 <NavLink
                   to={item.href}
                   onClick={handleMenuClick} // Close the menu on click
-                  className={`text-lg font-semibold ${themeStyles[theme].navbarText} transition ${themeStyles[theme].hover}`}
+                  className={`text-lg font-semibold text-[${theme.textColor}] transition `}
+                  //hover as well 
                 >
                   {item.name}
                 </NavLink>

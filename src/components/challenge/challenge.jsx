@@ -67,14 +67,17 @@ export default function ChallengeComponent() {
   };
 
   const handleNextChallenge = () => {
+    console.log('calling me ')
     if (currentChallengeIndex < challenges.length - 1) {
-      setCurrentChallengeIndex(currentChallengeIndex + 1);
+      setCurrentChallengeIndex(prev => prev + 1);
       setUserCode(challenges[currentChallengeIndex + 1].template);
       setFeedback(null);
       setShowHint(false);
     } else {
       setFeedback("You have completed all challenges!");
     }
+    console.log('calling me '+ currentChallengeIndex)
+
   };
 
   const handlePreviousChallenge = () => {
@@ -91,31 +94,41 @@ export default function ChallengeComponent() {
   };
 
   const handleKeyDown = (event) => {
+    console.log('call', event)
     switch (event.key) {
       case "ArrowLeft":
-        handlePreviousChallenge();
+        if (event.ctrlKey) {
+          handlePreviousChallenge();
+        }
         break;
       case "ArrowRight":
-        handleNextChallenge();
+        if (event.ctrlKey) {
+          handleNextChallenge();
+        }
         break;
-      // case "Enter":
-      //   handleRun();
-        // break;
+      case "Enter":
+        if (event.ctrlKey) {
+          handleSubmit();
+        }else if (event.shiftKey) {
+          handleRun();
+        }
+        break;
       default:
         break;
     }
   };
 
-  // // Add event listener once when the component mounts
-  // useEffect(() => {
-  //   const listener = (event) => handleKeyDown(event); // Ensure proper function reference
-  //   window.addEventListener("keydown", listener);
-
-  //   // Cleanup the event listener on unmount
-  //   return () => {
-  //     window.removeEventListener("keydown", listener);
-  //   };
-  // }, []); // Empty dependency array ensures this runs only once
+  // Add event listener once when the component mounts
+  useEffect(() => {
+    const listener = (event) => handleKeyDown(event); // Ensure proper function reference
+    window.addEventListener("keydown", listener);
+    console.log('ohh i mounted')
+    // Cleanup the event listener on unmount
+    return () => {
+      console.log('ohh i UNmounted')
+      window.removeEventListener("keydown", listener);
+    };
+  }, [currentChallengeIndex, counterRun]); // Empty dependency array ensures this runs only once
 
   return (
     <div className="p-6 max-w-4xl mx-auto">
@@ -169,6 +182,13 @@ export default function ChallengeComponent() {
       <textarea
         value={userCode}
         onChange={handleCodeChange}
+        onKeyDown={(e) => {
+          if (e.shiftKey && e.key === "Enter") {
+            e.preventDefault(); // Prevent the default behavior (jumping to a new line)
+            // You can also perform any custom logic here, such as submitting or handling the input
+            console.log("Shift+Enter was pressed");
+          }
+        }}
         rows="5"
         className="w-full p-2 border rounded mb-4"
       ></textarea>
@@ -188,7 +208,13 @@ export default function ChallengeComponent() {
           Submit
         </button>
       </div>
-      {feedback && <p className="text-lg text-gray-700 mt-4">{feedback}</p>}
+
+      {feedback &&
+        <div className="flex flex-col w-100 bg-slate-500 m-2 rounded">
+          <p className="text-xs text-white p-2 font-bold">Output: </p> 
+          <p className="text-lg text-white p-2 ">{feedback}</p>
+        </div>
+      }
       
     </div>
   );
