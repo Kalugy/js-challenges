@@ -15,7 +15,7 @@ export const themes = {
     btnColor: "#38BDF8",           // Blue-500: Primary button
     btnDangerColor: "#DC2626",     // Red-600: Danger button
     btnAlertColor: "#F59E0B",      // Amber-500: Alert button
-    textSize: 'text-xl'
+    textSize: 'text-md'
   },
   dark: { 
     textColor: "#ffffff",
@@ -24,7 +24,7 @@ export const themes = {
     btnColor: "#3B82F6",
     btnDangerColor: "#EF4444",
     btnAlertColor: "#c48200",
-    textSize: 'text-xl'
+    textSize: 'text-md'
   },
   custom: { 
     background: "#1d242f", 
@@ -33,5 +33,7 @@ export const themes = {
     btnColor: "#3B82F6",
     btnDangerColor: "#EF4444",
     btnAlertColor: "#CA8A04",
+    textSize: 'text-md'
   },
 };
+
