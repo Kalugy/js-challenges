@@ -7,7 +7,7 @@
     "function": "replaceAll()",
     "instruction": "replaces all occurrences of 'bad' with 'good' in the string 'bad apple, bad banana'",
     "expectedResult": "good apple, good banana",
-    "template": "function main(str='good apple, good banana') {\n  // Your code here\n  return '';\n}",
+    "template": "function main(str='bad apple, bad banana') {\n  // Your code here\n  return '';\n}",
     "hint": "The `replaceAll()` method replaces all occurrences of a substring in a string with a new string. Example: 'aabbcc'.replaceAll('b', 'x') returns 'aaxxcc'.",
     "points": "1"
   },
@@ -160,30 +160,6 @@
     "type": "memorize",
     "dificult": "easy",
     "method": "string",
-    "function": "split('separator')",
-    "instruction": "given 'I am learning js methods' split the string by spaces and return a string",
-    "expectedResult": "I,am,learning,js,methods",
-    "template": "function main(str='I am learning js methods') {\n  // Your code here\n  return '';\n}",
-    "hint": "The `split('separator')` method splits a string into an array of substrings using the specified separator. \nstring.split('separator') return [array]",
-    "points": "1"
-  },
-  {
-    "id": "15",
-    "type": "memorize",
-    "dificult": "easy",
-    "method": "string",
-    "function": "replace('old', 'new')",
-    "instruction": "given 'I am learning js methods' replace 'learning' with 'mastering'",
-    "expectedResult": "I am mastering js methods",
-    "template": "function main(str='I am learning js methods') {\n  // Your code here\n  return '';\n}",
-    "hint": "The `replace('old', 'new')` method returns a new string with some or all matches of a pattern replaced by a replacement. \nstring.replace('old', 'new')",
-    "points": "1"
-  },
-  {
-    "id": "16",
-    "type": "memorize",
-    "dificult": "easy",
-    "method": "string",
     "function": "slice(start, end)",
     "instruction": "Given 'I am learning js methods', extract the substring 'learning'.",
     "expectedResult": "learning",
@@ -192,7 +168,7 @@
     "points": "1"
   },
   {
-    "id": "17",
+    "id": "15",
     "type": "memorize",
     "dificult": "easy",
     "method": "string",
@@ -204,7 +180,7 @@
     "points": "1"
   },
   {
-    "id": "18",
+    "id": "16",
     "type": "memorize",
     "dificult": "easy",
     "method": "string",
@@ -216,7 +192,7 @@
     "points": "1"
   },
   {
-    "id": "19",
+    "id": "17",
     "type": "memorize",
     "dificult": "easy",
     "method": "string",
@@ -228,7 +204,7 @@
     "points": "1"
   },
   {
-    "id": "20",
+    "id": "18",
     "type": "memorize",
     "dificult": "easy",
     "method": "string",
@@ -240,7 +216,7 @@
     "points": "1"
   },
   {
-    "id": "21",
+    "id": "19",
     "type": "memorize",
     "dificult": "medium",
     "method": "string",
@@ -252,7 +228,7 @@
     "points": "2"
   },
   {
-    "id": "22",
+    "id": "20",
     "type": "memorize",
     "dificult": "medium",
     "method": "string",
@@ -264,7 +240,7 @@
     "points": "2"
   },
   {
-    "id": "23",
+    "id": "21",
     "type": "memorize",
     "dificult": "medium",
     "method": "string",
@@ -276,31 +252,31 @@
     "points": "2"
   },
   {
-    "id": "24",
+    "id": "22",
     "type": "memorize",
     "dificult": "medium",
     "method": "string",
     "function": "replace('old', 'new')",
     "instruction": "Given 'I am learning js', replace 'learning' with 'mastering'.",
-    "expectedResult": "'I am mastering js'",
+    "expectedResult": "I am mastering js",
     "template": "function main(str='I am learning js') {\n  // Your code here\n  return '';\n}",
     "hint": "The `replace('old', 'new')` method returns a new string with some or all matches of a pattern replaced by a replacement. \nstring.replace('old', 'new')",
     "points": "2"
   },
   {
-    "id": "25",
+    "id": "23",
     "type": "memorize",
     "dificult": "medium",
     "method": "string",
     "function": "replaceAll('old', 'new')",
     "instruction": "Given 'js is fun, js is great', replace all occurrences of 'js' with 'JavaScript'.",
-    "expectedResult": "'JavaScript is fun, JavaScript is great'",
+    "expectedResult": "JavaScript is fun, JavaScript is great",
     "template": "function main(str='js is fun, js is great') {\n  // Your code here\n  return '';\n}",
     "hint": "The `replaceAll('old', 'new')` method returns a new string with all matches of a pattern replaced by a replacement. \nstring.replaceAll('old', 'new')",
     "points": "2"
   },
   {
-    "id": "26",
+    "id": "24",
     "type": "memorize",
     "dificult": "easy",
     "method": "string",
@@ -312,7 +288,7 @@
     "points": "1"
   },
   {
-    "id": "27",
+    "id": "25",
     "type": "memorize",
     "dificult": "easy",
     "method": "string",
@@ -324,7 +300,7 @@
     "points": "1"
   },
   {
-    "id": "28",
+    "id": "26",
     "type": "memorize",
     "dificult": "easy",
     "method": "string",
@@ -336,7 +312,7 @@
     "points": "1"
   },
   {
-    "id": "29",
+    "id": "27",
     "type": "memorize",
     "dificult": "easy",
     "method": "string",
@@ -348,7 +324,7 @@
     "points": "1"
   },
   {
-    "id": "30",
+    "id": "28",
     "type": "memorize",
     "dificult": "easy",
     "method": "string",
@@ -360,7 +336,7 @@
     "points": "1"
   },
   {
-    "id": "31",
+    "id": "29",
     "type": "memorize",
     "dificult": "medium",
     "method": "string",
@@ -372,11 +348,11 @@
     "points": "2"
   },
   {
-    "id": "32",
+    "id": "30",
     "type": "memorize",
     "dificult": "easy",
     "method": "array",
-    "function": "Array.from()",
+    "function": "Array.from(str)",
     "instruction": "Given a string 'hello', use `Array.from()` to convert it into an array of characters.",
     "expectedResult": "['h', 'e', 'l', 'l', 'o']",
     "template": "function main(str='hello') {\n  // Your code here\n  return '';\n}",
@@ -384,7 +360,7 @@
     "points": "1"
   },
   {
-    "id": "33",
+    "id": "31",
     "type": "memorize",
     "dificult": "medium",
     "method": "array",
@@ -396,19 +372,19 @@
     "points": "2"
   },
   {
-    "id": "34",
+    "id": "32",
     "type": "memorize",
     "dificult": "easy",
     "method": "array",
     "function": "Array.isArray()",
     "instruction": "Check if the input `[1, 2, 3]` is an array using `Array.isArray()`.",
-    "expectedResult": "true",
+    "expectedResult": true,
     "template": "function main(input=[1, 2, 3]) {\n  // Your code here\n  return '';\n}",
     "hint": "The `Array.isArray()` method checks if a value is an array. \nArray.isArray(value)",
     "points": "1"
   },
   {
-    "id": "35",
+    "id": "33",
     "type": "memorize",
     "dificult": "easy",
     "method": "array",
@@ -420,19 +396,19 @@
     "points": "1"
   },
   {
-    "id": "36",
+    "id": "34",
     "type": "memorize",
     "dificult": "easy",
     "method": "array",
     "function": "Array.at()",
     "instruction": "Given the array [10, 20, 30, 40], use `at()` to access the third element (index 2).",
-    "expectedResult": "30",
+    "expectedResult": 30,
     "template": "function main(arr=[10, 20, 30, 40]) {\n  // Your code here\n  return '';\n}",
     "hint": "The `at()` method accesses the element at the specified index, including negative indexing. \narray.at(index)",
     "points": "1"
   },
   {
-    "id": "37",
+    "id": "35",
     "type": "memorize",
     "dificult": "easy",
     "method": "array",
@@ -444,11 +420,11 @@
     "points": "1"
   },
   {
-    "id": "38",
+    "id": "36",
     "type": "memorize",
     "dificult": "medium",
     "method": "array",
-    "function": "Array.copyWithin()",
+    "function": "Array.copyWithin(target, start)",
     "instruction": "Given the array [1, 2, 3, 4, 5], use `copyWithin()` to copy elements starting at index 0 to index 3.",
     "expectedResult": "[1, 2, 3, 1, 2]",
     "template": "function main(arr=[1, 2, 3, 4, 5]) {\n  // Your code here\n  return '';\n}",
@@ -456,7 +432,7 @@
     "points": "2"
   },
   {
-    "id": "39",
+    "id": "37",
     "type": "memorize",
     "dificult": "medium",
     "method": "array",
@@ -468,19 +444,19 @@
     "points": "2"
   },
   {
-    "id": "40",
+    "id": "38",
     "type": "memorize",
     "dificult": "easy",
     "method": "array",
     "function": "Array.every()",
     "instruction": "Check if all numbers in the array [2, 4, 6] are even using `every()`.",
-    "expectedResult": "true",
+    "expectedResult": true,
     "template": "function main(arr=[2, 4, 6]) {\n  // Your code here\n  return '';\n}",
     "hint": "The `every()` method tests if all elements pass a condition. \narray.every(callback)",
     "points": "1"
   },
   {
-    "id": "41",
+    "id": "39",
     "type": "memorize",
     "dificult": "easy",
     "method": "array",
@@ -492,7 +468,7 @@
     "points": "1"
   },
   {
-    "id": "42",
+    "id": "40",
     "type": "memorize",
     "dificult": "medium",
     "method": "array",
@@ -504,15 +480,39 @@
     "points": "2"
   },
   {
-    "id": "43",
+    "id": "41",
     "type": "memorize",
     "dificult": "medium",
     "method": "array",
     "function": "Array.find()",
     "instruction": "Find the first number greater than 10 in the array [5, 12, 8, 130, 44] using `find()`.",
-    "expectedResult": "12",
+    "expectedResult": 12,
     "template": "function main(arr=[5, 12, 8, 130, 44]) {\n  // Your code here\n  return '';\n}",
     "hint": "The `find()` method returns the first element that satisfies a condition. \narray.find(callback)",
+    "points": "2"
+  },
+  {
+    "id": "42",
+    "type": "memorize",
+    "dificult": "medium",
+    "method": "array",
+    "function": "Array.findIndex()",
+    "instruction": "Find the index of the first number greater than 10 in the array [5, 12, 8, 130, 44] using `findIndex()`.",
+    "expectedResult": 1,
+    "template": "function main(arr=[5, 12, 8, 130, 44]) {\n  // Your code here\n  return '';\n}",
+    "hint": "The `findIndex()` method returns the index of the first element that satisfies a condition. \narray.findIndex(callback)",
+    "points": "2"
+  },
+  {
+    "id": "43",
+    "type": "memorize",
+    "dificult": "medium",
+    "method": "array",
+    "function": "Array.findLast()",
+    "instruction": "Find the last number greater than 10 in the array [5, 12, 8, 130, 44] using `findLast()`.",
+    "expectedResult": 44,
+    "template": "function main(arr=[5, 12, 8, 130, 44]) {\n  // Your code here\n  return '';\n}",
+    "hint": "The `findLast()` method returns the last element that satisfies a condition. \narray.findLast(callback)",
     "points": "2"
   },
   {
@@ -520,39 +520,15 @@
     "type": "memorize",
     "dificult": "medium",
     "method": "array",
-    "function": "Array.findIndex()",
-    "instruction": "Find the index of the first number greater than 10 in the array [5, 12, 8, 130, 44] using `findIndex()`.",
-    "expectedResult": "1",
-    "template": "function main(arr=[5, 12, 8, 130, 44]) {\n  // Your code here\n  return '';\n}",
-    "hint": "The `findIndex()` method returns the index of the first element that satisfies a condition. \narray.findIndex(callback)",
-    "points": "2"
-  },
-  {
-    "id": "45",
-    "type": "memorize",
-    "dificult": "medium",
-    "method": "array",
-    "function": "Array.findLast()",
-    "instruction": "Find the last number greater than 10 in the array [5, 12, 8, 130, 44] using `findLast()`.",
-    "expectedResult": "44",
-    "template": "function main(arr=[5, 12, 8, 130, 44]) {\n  // Your code here\n  return '';\n}",
-    "hint": "The `findLast()` method returns the last element that satisfies a condition. \narray.findLast(callback)",
-    "points": "2"
-  },
-  {
-    "id": "46",
-    "type": "memorize",
-    "dificult": "medium",
-    "method": "array",
     "function": "Array.findLastIndex()",
     "instruction": "Find the index of the last number greater than 10 in the array [5, 12, 8, 130, 44] using `findLastIndex()`.",
-    "expectedResult": "4",
+    "expectedResult": 4,
     "template": "function main(arr=[5, 12, 8, 130, 44]) {\n  // Your code here\n  return '';\n}",
     "hint": "The `findLastIndex()` method returns the index of the last element that satisfies a condition. \narray.findLastIndex(callback)",
     "points": "2"
   },
   {
-    "id": "47",
+    "id": "45",
     "type": "memorize",
     "dificult": "medium",
     "method": "array",
@@ -564,7 +540,7 @@
     "points": "2"
   },
   {
-    "id": "48",
+    "id": "46",
     "type": "memorize",
     "dificult": "medium",
     "method": "array",
@@ -576,7 +552,7 @@
     "points": "2"
   },
   {
-    "id": "49",
+    "id": "47",
     "type": "memorize",
     "dificult": "easy",
     "method": "array",
@@ -588,7 +564,7 @@
     "points": "1"
   },
   {
-    "id": "50",
+    "id": "48",
     "type": "memorize",
     "dificult": "easy",
     "method": "array",
@@ -600,7 +576,7 @@
     "points": "1"
   },
   {
-    "id": "51",
+    "id": "49",
     "type": "memorize",
     "dificult": "easy",
     "method": "array",
@@ -612,7 +588,7 @@
     "points": "1"
   },
   {
-    "id": "52",
+    "id": "50",
     "type": "memorize",
     "dificult": "easy",
     "method": "array",
@@ -624,7 +600,7 @@
     "points": "1"
   },
   {
-    "id": "53",
+    "id": "51",
     "type": "memorize",
     "dificult": "medium",
     "method": "array",
@@ -636,7 +612,7 @@
     "points": "2"
   },
   {
-    "id": "54",
+    "id": "52",
     "type": "memorize",
     "dificult": "easy",
     "method": "array",
@@ -648,7 +624,7 @@
     "points": "1"
   },
   {
-    "id": "55",
+    "id": "53",
     "type": "memorize",
     "dificult": "medium",
     "method": "array",
@@ -660,7 +636,7 @@
     "points": "2"
   },
   {
-    "id": "56",
+    "id": "54",
     "type": "memorize",
     "dificult": "easy",
     "method": "array",
@@ -672,7 +648,7 @@
     "points": "1"
   },
   {
-    "id": "57",
+    "id": "55",
     "type": "memorize",
     "dificult": "easy",
     "method": "array",
@@ -684,7 +660,7 @@
     "points": "1"
   },
   {
-    "id": "58",
+    "id": "56",
     "type": "memorize",
     "dificult": "medium",
     "method": "array",
@@ -696,7 +672,7 @@
     "points": "2"
   },
   {
-    "id": "59",
+    "id": "57",
     "type": "memorize",
     "dificult": "medium",
     "method": "array",
@@ -708,7 +684,7 @@
     "points": "1"
   },
   {
-    "id": "60",
+    "id": "58",
     "type": "memorize",
     "dificult": "easy",
     "method": "array",
@@ -720,7 +696,7 @@
     "points": "1"
   },
   {
-    "id": "61",
+    "id": "59",
     "type": "memorize",
     "dificult": "easy",
     "method": "array",
@@ -732,19 +708,19 @@
     "points": "1"
   },
   {
-    "id": "62",
+    "id": "60",
     "type": "memorize",
     "dificult": "medium",
     "method": "array",
     "function": "Array.some()",
     "instruction": "Check if any number in the array [1, 2, 3, 4] is greater than 3 using `some()`.",
-    "expectedResult": "true",
+    "expectedResult": true,
     "template": "function main(arr=[1, 2, 3, 4]) {\n  // Your code here\n  return '';\n}",
     "hint": "The `some()` method tests if at least one element satisfies a condition. \narray.some(callback)",
     "points": "2"
   },
   {
-    "id": "63",
+    "id": "61",
     "type": "memorize",
     "dificult": "medium",
     "method": "array",
@@ -756,7 +732,7 @@
     "points": "2"
   },
   {
-    "id": "64",
+    "id": "62",
     "type": "memorize",
     "dificult": "medium",
     "method": "array",
@@ -768,7 +744,7 @@
     "points": "2"
   },
   {
-    "id": "65",
+    "id": "63",
     "type": "memorize",
     "dificult": "medium",
     "method": "array",
@@ -780,7 +756,7 @@
     "points": "2"
   },
   {
-    "id": "66",
+    "id": "64",
     "type": "memorize",
     "dificult": "easy",
     "method": "array",
@@ -792,7 +768,7 @@
     "points": "1"
   },
   {
-    "id": "67",
+    "id": "65",
     "type": "memorize",
     "dificult": "easy",
     "method": "array",
@@ -804,7 +780,7 @@
     "points": "1"
   },
   {
-    "id": "68",
+    "id": "66",
     "type": "memorize",
     "dificult": "easy",
     "method": "array",
@@ -816,7 +792,7 @@
     "points": "1"
   },
   {
-    "id": "69",
+    "id": "67",
     "type": "memorize",
     "dificult": "easy",
     "method": "array",
@@ -828,7 +804,7 @@
     "points": "1"
   },
   {
-    "id": "70",
+    "id": "68",
     "type": "memorize",
     "dificult": "easy",
     "method": "array",
@@ -840,7 +816,7 @@
     "points": "1"
   },
   {
-    "id": "71",
+    "id": "69",
     "type": "memorize",
     "dificult": "medium",
     "method": "array",
@@ -852,7 +828,7 @@
     "points": "2"
   },
   {
-    "id": "72",
+    "id": "70",
     "type": "memorize",
     "dificult": "medium",
     "method": "array",
@@ -864,7 +840,7 @@
     "points": "2"
   },
   {
-    "id": "73",
+    "id": "71",
     "type": "memorize",
     "dificult": "medium",
     "method": "object",
@@ -876,7 +852,7 @@
     "points": "2"
   },
   {
-    "id": "74",
+    "id": "72",
     "type": "memorize",
     "dificult": "medium",
     "method": "object",
@@ -888,7 +864,7 @@
     "points": "2"
   },
   {
-    "id": "75",
+    "id": "73",
     "type": "memorize",
     "dificult": "hard",
     "method": "object",
@@ -900,7 +876,7 @@
     "points": "3"
   },
   {
-    "id": "76",
+    "id": "74",
     "type": "memorize",
     "dificult": "medium",
     "method": "object",
@@ -912,7 +888,7 @@
     "points": "2"
   },
   {
-    "id": "77",
+    "id": "75",
     "type": "memorize",
     "dificult": "easy",
     "method": "object",
@@ -924,7 +900,7 @@
     "points": "1"
   },
   {
-    "id": "78",
+    "id": "76",
     "type": "memorize",
     "dificult": "easy",
     "method": "object",
@@ -936,7 +912,7 @@
     "points": "1"
   },
   {
-    "id": "79",
+    "id": "77",
     "type": "memorize",
     "dificult": "medium",
     "method": "object",
@@ -948,7 +924,7 @@
     "points": "2"
   },
   {
-    "id": "80",
+    "id": "78",
     "type": "memorize",
     "dificult": "medium",
     "method": "object",
@@ -960,7 +936,7 @@
     "points": "2"
   },
   {
-    "id": "81",
+    "id": "79",
     "type": "memorize",
     "dificult": "medium",
     "method": "object",
@@ -972,7 +948,7 @@
     "points": "2"
   },
   {
-    "id": "82",
+    "id": "80",
     "type": "memorize",
     "dificult": "medium",
     "method": "object",
@@ -984,7 +960,7 @@
     "points": "2"
   },
   {
-    "id": "83",
+    "id": "81",
     "type": "memorize",
     "dificult": "medium",
     "method": "object",
@@ -996,7 +972,7 @@
     "points": "2"
   },
   {
-    "id": "84",
+    "id": "82",
     "type": "memorize",
     "dificult": "medium",
     "method": "object",
@@ -1008,7 +984,7 @@
     "points": "2"
   },
   {
-    "id": "85",
+    "id": "83",
     "type": "memorize",
     "dificult": "hard",
     "method": "object",
@@ -1020,7 +996,7 @@
     "points": "3"
   },
   {
-    "id": "86",
+    "id": "84",
     "type": "memorize",
     "dificult": "easy",
     "method": "object",
@@ -1032,7 +1008,7 @@
     "points": "1"
   },
   {
-    "id": "87",
+    "id": "85",
     "type": "memorize",
     "dificult": "easy",
     "method": "object",
@@ -1044,7 +1020,7 @@
     "points": "1"
   },
   {
-    "id": "88",
+    "id": "86",
     "type": "memorize",
     "dificult": "easy",
     "method": "object",
@@ -1056,7 +1032,7 @@
     "points": "1"
   },
   {
-    "id": "89",
+    "id": "87",
     "type": "memorize",
     "dificult": "easy",
     "method": "object",
@@ -1068,7 +1044,7 @@
     "points": "1"
   },
   {
-    "id": "90",
+    "id": "88",
     "type": "memorize",
     "dificult": "easy",
     "method": "object",
@@ -1080,7 +1056,7 @@
     "points": "1"
   },
   {
-    "id": "91",
+    "id": "89",
     "type": "memorize",
     "dificult": "easy",
     "method": "object",
@@ -1092,7 +1068,7 @@
     "points": "1"
   },
   {
-    "id": "92",
+    "id": "90",
     "type": "memorize",
     "dificult": "medium",
     "method": "object",
@@ -1104,7 +1080,7 @@
     "points": "2"
   },
   {
-    "id": "93",
+    "id": "91",
     "type": "memorize",
     "dificult": "medium",
     "method": "object",
@@ -1116,7 +1092,7 @@
     "points": "2"
   },
   {
-    "id": "94",
+    "id": "92",
     "type": "memorize",
     "dificult": "easy",
     "method": "object",
@@ -1127,5 +1103,4 @@
     "hint": "The `Object.values()` method returns an array of an object's own enumerable values. \nObject.values(obj)",
     "points": "1"
   }
-  
 ]
