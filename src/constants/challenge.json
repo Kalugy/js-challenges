@@ -282,7 +282,12 @@
     "method": "string",
     "function": "split('separator')",
     "instruction": "Given 'I am learning js', split the string into an array of words.",
-    "expectedResult": ["I", "am", "learning", "js"],
+    "expectedResult": [
+      "I",
+      "am",
+      "learning",
+      "js"
+    ],
     "template": "function main(str='I am learning js') {\n  // Your code here\n  return '';\n}",
     "hint": "The `split('separator')` method splits a string into an array of substrings using the specified separator. \nstring.split('separator')",
     "points": "1"
@@ -300,7 +305,7 @@
     "points": "1"
   },
   {
-    "id": "27",
+    "id": "26",
     "type": "memorize",
     "dificult": "easy",
     "method": "string",
@@ -312,7 +317,7 @@
     "points": "1"
   },
   {
-    "id": "28",
+    "id": "27",
     "type": "memorize",
     "dificult": "easy",
     "method": "string",
@@ -324,7 +329,7 @@
     "points": "1"
   },
   {
-    "id": "29",
+    "id": "28",
     "type": "memorize",
     "dificult": "medium",
     "method": "string",
@@ -336,31 +341,41 @@
     "points": "2"
   },
   {
-    "id": "30",
+    "id": "29",
     "type": "memorize",
     "dificult": "easy",
     "method": "array",
     "function": "Array.from(str)",
     "instruction": "Given a string 'hello', use `Array.from()` to convert it into an array of characters.",
-    "expectedResult": ["h", "e", "l", "l", "o"],
+    "expectedResult": [
+      "h",
+      "e",
+      "l",
+      "l",
+      "o"
+    ],
     "template": "function main(str='hello') {\n  // Your code here\n  return '';\n}",
     "hint": "The `Array.from()` method creates a new array from an iterable object or array-like value. \nArray.from('string')",
     "points": "1"
   },
   {
-    "id": "31",
+    "id": "30",
     "type": "memorize",
     "dificult": "medium",
     "method": "array",
     "function": "Array.fromAsync()",
     "instruction": "Create an array from an asynchronous generator that yields 1, 2, and 3 using `Array.fromAsync()`.",
-    "expectedResult": [1, 2, 3],
+    "expectedResult": [
+      1,
+      2,
+      3
+    ],
     "template": "async function main() {\n  async function* generator() {\n    yield 1;\n    yield 2;\n    yield 3;\n  }\n  // Your code here\n  return '';\n}",
     "hint": "The `Array.fromAsync()` method creates an array asynchronously from an async iterable object. \nArray.fromAsync(asyncIterable)",
     "points": "2"
   },
   {
-    "id": "32",
+    "id": "31",
     "type": "memorize",
     "dificult": "easy",
     "method": "array",
@@ -372,19 +387,23 @@
     "points": "1"
   },
   {
-    "id": "33",
+    "id": "32",
     "type": "memorize",
     "dificult": "easy",
     "method": "array",
     "function": "Array.of()",
     "instruction": "Use `Array.of()` to create an array containing the numbers 1, 2, and 3.",
-    "expectedResult": [1, 2, 3],
+    "expectedResult": [
+      1,
+      2,
+      3
+    ],
     "template": "function main() {\n  // Your code here\n  return '';\n}",
     "hint": "The `Array.of()` method creates a new array from its arguments. \nArray.of(1, 2, 3)",
     "points": "1"
   },
   {
-    "id": "34",
+    "id": "33",
     "type": "memorize",
     "dificult": "easy",
     "method": "array",
@@ -396,43 +415,67 @@
     "points": "1"
   },
   {
-    "id": "35",
+    "id": "34",
     "type": "memorize",
     "dificult": "easy",
     "method": "array",
     "function": "Array.concat()",
     "instruction": "Combine the arrays [1, 2] and [3, 4] using `concat()`.",
-    "expectedResult": [1, 2, 3, 4],
+    "expectedResult": [
+      1,
+      2,
+      3,
+      4
+    ],
     "template": "function main(arr1=[1, 2], arr2=[3, 4]) {\n  // Your code here\n  return '';\n}",
     "hint": "The `concat()` method merges two or more arrays into a new array. \narray.concat(array2)",
     "points": "1"
+  },
+  {
+    "id": "35",
+    "type": "memorize",
+    "dificult": "medium",
+    "method": "array",
+    "function": "Array.copyWithin(target, start)",
+    "instruction": "Given the array [1, 2, 3, 4, 5], use `copyWithin()` to copy elements starting at index 0 to index 3.",
+    "expectedResult": [
+      1,
+      2,
+      3,
+      1,
+      2
+    ],
+    "template": "function main(arr=[1, 2, 3, 4, 5]) {\n  // Your code here\n  return '';\n}",
+    "hint": "The `copyWithin()` method copies part of an array to another location in the same array. \narray.copyWithin(target, start)",
+    "points": "2"
   },
   {
     "id": "36",
     "type": "memorize",
     "dificult": "medium",
     "method": "array",
-    "function": "Array.copyWithin(target, start)",
-    "instruction": "Given the array [1, 2, 3, 4, 5], use `copyWithin()` to copy elements starting at index 0 to index 3.",
-    "expectedResult": [1, 2, 3, 1, 2],
-    "template": "function main(arr=[1, 2, 3, 4, 5]) {\n  // Your code here\n  return '';\n}",
-    "hint": "The `copyWithin()` method copies part of an array to another location in the same array. \narray.copyWithin(target, start)",
-    "points": "2"
-  },
-  {
-    "id": "37",
-    "type": "memorize",
-    "dificult": "medium",
-    "method": "array",
     "function": "Array.entries()",
     "instruction": "Given the array ['a', 'b', 'c'], use `entries()` to return an iterator of index-value pairs.",
-    "expectedResult": [[0, "a"], [1, "b"], [2, "c"]],
+    "expectedResult": [
+      [
+        0,
+        "a"
+      ],
+      [
+        1,
+        "b"
+      ],
+      [
+        2,
+        "c"
+      ]
+    ],
     "template": "function main(arr=['a', 'b', 'c']) {\n  // Your code here\n  return '';\n}",
     "hint": "The `entries()` method returns an iterator of key-value pairs. Use `Array.from()` to convert it to an array.",
     "points": "2"
   },
   {
-    "id": "38",
+    "id": "37",
     "type": "memorize",
     "dificult": "easy",
     "method": "array",
@@ -444,31 +487,39 @@
     "points": "1"
   },
   {
-    "id": "39",
+    "id": "38",
     "type": "memorize",
     "dificult": "easy",
     "method": "array",
     "function": "Array.fill()",
     "instruction": "Fill the array [1, 2, 3, 4] with the value 0 from index 1 to 3 using `fill()`.",
-    "expectedResult": [1, 0, 0, 4],
+    "expectedResult": [
+      1,
+      0,
+      0,
+      4
+    ],
     "template": "function main(arr=[1, 2, 3, 4]) {\n  // Your code here\n  return '';\n}",
     "hint": "The `fill()` method changes all elements in a range to a static value. \narray.fill(value, start, end)",
     "points": "1"
   },
   {
-    "id": "40",
+    "id": "39",
     "type": "memorize",
     "dificult": "medium",
     "method": "array",
     "function": "Array.filter()",
     "instruction": "Filter out all odd numbers from the array [1, 2, 3, 4, 5] using `filter()`.",
-    "expectedResult": [2, 4],
+    "expectedResult": [
+      2,
+      4
+    ],
     "template": "function main(arr=[1, 2, 3, 4, 5]) {\n  // Your code here\n  return '';\n}",
     "hint": "The `filter()` method creates a new array with elements that pass a condition. \narray.filter(callback)",
     "points": "2"
   },
   {
-    "id": "41",
+    "id": "40",
     "type": "memorize",
     "dificult": "medium",
     "method": "array",
@@ -480,7 +531,7 @@
     "points": "2"
   },
   {
-    "id": "42",
+    "id": "41",
     "type": "memorize",
     "dificult": "medium",
     "method": "array",
@@ -492,7 +543,7 @@
     "points": "2"
   },
   {
-    "id": "43",
+    "id": "42",
     "type": "memorize",
     "dificult": "medium",
     "method": "array",
@@ -504,7 +555,7 @@
     "points": "2"
   },
   {
-    "id": "44",
+    "id": "43",
     "type": "memorize",
     "dificult": "medium",
     "method": "array",
@@ -516,31 +567,47 @@
     "points": "2"
   },
   {
-    "id": "45",
+    "id": "44",
     "type": "memorize",
     "dificult": "medium",
     "method": "array",
     "function": "Array.flat()",
     "instruction": "Flatten the array [1, [2, [3, [4]]]] one level deep using `flat()`.",
-    "expectedResult": [1, 2, [3, [4]]],
+    "expectedResult": [
+      1,
+      2,
+      [
+        3,
+        [
+          4
+        ]
+      ]
+    ],
     "template": "function main(arr=[1, [2, [3, [4]]]]) {\n  // Your code here\n  return '';\n}",
     "hint": "The `flat()` method creates a new array with elements flattened to a specified depth. \narray.flat(depth)",
     "points": "2"
   },
   {
-    "id": "46",
+    "id": "45",
     "type": "memorize",
     "dificult": "medium",
     "method": "array",
     "function": "Array.flatMap()",
     "instruction": "Map each number in [1, 2, 3] to an array containing the number and its square, then flatten the result using `flatMap()`.",
-    "expectedResult": [1, 1, 2, 4, 3, 9],
+    "expectedResult": [
+      1,
+      1,
+      2,
+      4,
+      3,
+      9
+    ],
     "template": "function main(arr=[1, 2, 3]) {\n  // Your code here\n  return '';\n}",
     "hint": "The `flatMap()` method maps and flattens the result into a new array. \narray.flatMap(callback)",
     "points": "2"
   },
   {
-    "id": "47",
+    "id": "46",
     "type": "memorize",
     "dificult": "easy",
     "method": "array",
@@ -552,7 +619,7 @@
     "points": "1"
   },
   {
-    "id": "48",
+    "id": "47",
     "type": "memorize",
     "dificult": "easy",
     "method": "array",
@@ -564,7 +631,7 @@
     "points": "1"
   },
   {
-    "id": "49",
+    "id": "48",
     "type": "memorize",
     "dificult": "easy",
     "method": "array",
@@ -576,7 +643,7 @@
     "points": "1"
   },
   {
-    "id": "50",
+    "id": "49",
     "type": "memorize",
     "dificult": "easy",
     "method": "array",
@@ -588,19 +655,23 @@
     "points": "1"
   },
   {
-    "id": "51",
+    "id": "50",
     "type": "memorize",
     "dificult": "medium",
     "method": "array",
     "function": "Array.keys()",
     "instruction": "Return an iterator of the keys (indexes) of the array ['a', 'b', 'c'] using `keys()`.",
-    "expectedResult": [0, 1, 2],
+    "expectedResult": [
+      0,
+      1,
+      2
+    ],
     "template": "function main(arr=['a', 'b', 'c']) {\n  // Your code here\n  return '';\n}",
     "hint": "The `keys()` method returns an iterator of array indexes. Use `Array.from()` to convert it to an array.",
     "points": "2"
   },
   {
-    "id": "52",
+    "id": "51",
     "type": "memorize",
     "dificult": "easy",
     "method": "array",
@@ -612,19 +683,23 @@
     "points": "1"
   },
   {
-    "id": "53",
+    "id": "52",
     "type": "memorize",
     "dificult": "medium",
     "method": "array",
     "function": "Array.map()",
     "instruction": "Create a new array by squaring each number in [1, 2, 3] using `map()`.",
-    "expectedResult": [1, 4, 9],
+    "expectedResult": [
+      1,
+      4,
+      9
+    ],
     "template": "function main(arr=[1, 2, 3]) {\n  // Your code here\n  return '';\n}",
     "hint": "The `map()` method creates a new array by applying a function to each element. \narray.map(callback)",
     "points": "2"
   },
   {
-    "id": "54",
+    "id": "53",
     "type": "memorize",
     "dificult": "easy",
     "method": "array",
@@ -636,19 +711,24 @@
     "points": "1"
   },
   {
-    "id": "55",
+    "id": "54",
     "type": "memorize",
     "dificult": "easy",
     "method": "array",
     "function": "Array.push()",
     "instruction": "Add the number 4 to the array [1, 2, 3] using `push()`.",
-    "expectedResult": [1, 2, 3, 4],
+    "expectedResult": [
+      1,
+      2,
+      3,
+      4
+    ],
     "template": "function main(arr=[1, 2, 3]) {\n  // Your code here\n  return '';\n}",
     "hint": "The `push()` method adds one or more elements to the end of an array. \narray.push(value)",
     "points": "1"
   },
   {
-    "id": "56",
+    "id": "55",
     "type": "memorize",
     "dificult": "medium",
     "method": "array",
@@ -660,15 +740,35 @@
     "points": "2"
   },
   {
-    "id": "57",
+    "id": "56",
     "type": "memorize",
     "dificult": "medium",
     "method": "array",
     "function": "Array.reverse()",
     "instruction": "Reverse the array [1, 2, 3, 4] using `reverse()`.",
-    "expectedResult": [4, 3, 2, 1],
+    "expectedResult": [
+      4,
+      3,
+      2,
+      1
+    ],
     "template": "function main(arr=[1, 2, 3, 4]) {\n  // Your code here\n  return '';\n}",
     "hint": "The `reverse()` method reverses the array in place. \narray.reverse()",
+    "points": "1"
+  },
+  {
+    "id": "57",
+    "type": "memorize",
+    "dificult": "easy",
+    "method": "array",
+    "function": "Array.shift()",
+    "instruction": "Remove the first element of the array [1, 2, 3] using `shift()`.",
+    "expectedResult": [
+      2,
+      3
+    ],
+    "template": "function main(arr=[1, 2, 3]) {\n  // Your code here\n  return '';\n}",
+    "hint": "The `shift()` method removes the first element of an array and returns it. \narray.shift()",
     "points": "1"
   },
   {
@@ -676,27 +776,18 @@
     "type": "memorize",
     "dificult": "easy",
     "method": "array",
-    "function": "Array.shift()",
-    "instruction": "Remove the first element of the array [1, 2, 3] using `shift()`.",
-    "expectedResult": [2, 3],
-    "template": "function main(arr=[1, 2, 3]) {\n  // Your code here\n  return '';\n}",
-    "hint": "The `shift()` method removes the first element of an array and returns it. \narray.shift()",
-    "points": "1"
-  },
-  {
-    "id": "59",
-    "type": "memorize",
-    "dificult": "easy",
-    "method": "array",
     "function": "Array.slice()",
     "instruction": "Extract the subarray [2, 3] from the array [1, 2, 3, 4] using `slice()`.",
-    "expectedResult": [2, 3],
+    "expectedResult": [
+      2,
+      3
+    ],
     "template": "function main(arr=[1, 2, 3, 4]) {\n  // Your code here\n  return '';\n}",
     "hint": "The `slice()` method returns a shallow copy of a portion of an array. \narray.slice(start, end)",
     "points": "1"
   },
   {
-    "id": "60",
+    "id": "59",
     "type": "memorize",
     "dificult": "medium",
     "method": "array",
@@ -708,31 +799,39 @@
     "points": "2"
   },
   {
-    "id": "61",
+    "id": "60",
     "type": "memorize",
     "dificult": "medium",
     "method": "array",
     "function": "Array.sort()",
     "instruction": "Sort the array [3, 1, 4, 2] in ascending order using `sort()`.",
-    "expectedResult": [1, 2, 3, 4],
+    "expectedResult": [
+      1,
+      2,
+      3,
+      4
+    ],
     "template": "function main(arr=[3, 1, 4, 2]) {\n  // Your code here\n  return '';\n}",
     "hint": "The `sort()` method sorts elements in place. Provide a comparator function for numeric sorting. \narray.sort((a, b) => a - b)",
     "points": "2"
   },
   {
-    "id": "62",
+    "id": "61",
     "type": "memorize",
     "dificult": "medium",
     "method": "array",
     "function": "Array.splice()",
     "instruction": "Remove 2 elements starting at index 1 in the array [1, 2, 3, 4] using `splice()`.",
-    "expectedResult": [1, 4],
+    "expectedResult": [
+      1,
+      4
+    ],
     "template": "function main(arr=[1, 2, 3, 4]) {\n  // Your code here\n  return '';\n}",
     "hint": "The `splice()` method changes the contents of an array by removing, replacing, or adding elements. \narray.splice(start, deleteCount)",
     "points": "2"
   },
   {
-    "id": "63",
+    "id": "62",
     "type": "memorize",
     "dificult": "medium",
     "method": "array",
@@ -744,15 +843,37 @@
     "points": "2"
   },
   {
-    "id": "64",
+    "id": "63",
     "type": "memorize",
     "dificult": "easy",
     "method": "array",
     "function": "Array.toReversed()",
     "instruction": "Return a reversed version of the array [1, 2, 3, 4] using `toReversed()`.",
-    "expectedResult": [4, 3, 2, 1],
+    "expectedResult": [
+      4,
+      3,
+      2,
+      1
+    ],
     "template": "function main(arr=[1, 2, 3, 4]) {\n  // Your code here\n  return '';\n}",
     "hint": "The `toReversed()` method returns a new reversed array without mutating the original array. \narray.toReversed()",
+    "points": "1"
+  },
+  {
+    "id": "64",
+    "type": "memorize",
+    "dificult": "easy",
+    "method": "array",
+    "function": "Array.toSorted()",
+    "instruction": "Return a sorted version of the array [3, 1, 4, 2] using `toSorted()`.",
+    "expectedResult": [
+      1,
+      2,
+      3,
+      4
+    ],
+    "template": "function main(arr=[3, 1, 4, 2]) {\n  // Your code here\n  return '';\n}",
+    "hint": "The `toSorted()` method returns a new sorted array without mutating the original. Provide a comparator for numeric sorting. \narray.toSorted((a, b) => a - b)",
     "points": "1"
   },
   {
@@ -760,27 +881,18 @@
     "type": "memorize",
     "dificult": "easy",
     "method": "array",
-    "function": "Array.toSorted()",
-    "instruction": "Return a sorted version of the array [3, 1, 4, 2] using `toSorted()`.",
-    "expectedResult": [1, 2, 3, 4],
-    "template": "function main(arr=[3, 1, 4, 2]) {\n  // Your code here\n  return '';\n}",
-    "hint": "The `toSorted()` method returns a new sorted array without mutating the original. Provide a comparator for numeric sorting. \narray.toSorted((a, b) => a - b)",
-    "points": "1"
-  },
-  {
-    "id": "66",
-    "type": "memorize",
-    "dificult": "easy",
-    "method": "array",
     "function": "Array.toSpliced()",
     "instruction": "Remove 2 elements starting at index 1 from the array [1, 2, 3, 4] using `toSpliced()`.",
-    "expectedResult": [1, 4],
+    "expectedResult": [
+      1,
+      4
+    ],
     "template": "function main(arr=[1, 2, 3, 4]) {\n  // Your code here\n  return '';\n}",
     "hint": "The `toSpliced()` method returns a new array with the specified changes without modifying the original. \narray.toSpliced(start, deleteCount)",
     "points": "1"
   },
   {
-    "id": "67",
+    "id": "66",
     "type": "memorize",
     "dificult": "easy",
     "method": "array",
@@ -792,43 +904,56 @@
     "points": "1"
   },
   {
-    "id": "68",
+    "id": "67",
     "type": "memorize",
     "dificult": "easy",
     "method": "array",
     "function": "Array.unshift()",
     "instruction": "Add the number 0 to the beginning of the array [1, 2, 3] using `unshift()`.",
-    "expectedResult": [0, 1, 2, 3],
+    "expectedResult": [
+      0,
+      1,
+      2,
+      3
+    ],
     "template": "function main(arr=[1, 2, 3]) {\n  // Your code here\n  return '';\n}",
     "hint": "The `unshift()` method adds one or more elements to the beginning of an array. \narray.unshift(value)",
     "points": "1"
+  },
+  {
+    "id": "68",
+    "type": "memorize",
+    "dificult": "medium",
+    "method": "array",
+    "function": "Array.values()",
+    "instruction": "Return an iterator of values from the array ['a', 'b', 'c'] using `values()`.",
+    "expectedResult": [
+      "a",
+      "b",
+      "c"
+    ],
+    "template": "function main(arr=['a', 'b', 'c']) {\n  // Your code here\n  return '';\n}",
+    "hint": "The `values()` method returns an iterator of the array's values. Use `Array.from()` to convert it to an array.",
+    "points": "2"
   },
   {
     "id": "69",
     "type": "memorize",
     "dificult": "medium",
     "method": "array",
-    "function": "Array.values()",
-    "instruction": "Return an iterator of values from the array ['a', 'b', 'c'] using `values()`.",
-    "expectedResult": ["a", "b", "c"],
-    "template": "function main(arr=['a', 'b', 'c']) {\n  // Your code here\n  return '';\n}",
-    "hint": "The `values()` method returns an iterator of the array's values. Use `Array.from()` to convert it to an array.",
-    "points": "2"
-  },
-  {
-    "id": "70",
-    "type": "memorize",
-    "dificult": "medium",
-    "method": "array",
     "function": "Array.with()",
     "instruction": "Replace the element at index 1 with 100 in the array [1, 2, 3] using `with()`.",
-    "expectedResult": [1, 100, 3],
+    "expectedResult": [
+      1,
+      100,
+      3
+    ],
     "template": "function main(arr=[1, 2, 3]) {\n  // Your code here\n  return '';\n}",
     "hint": "The `with()` method creates a new array with the specified index replaced. \narray.with(index, value)",
     "points": "2"
   },
   {
-    "id": "71",
+    "id": "70",
     "type": "memorize",
     "dificult": "medium",
     "method": "object",
@@ -840,7 +965,7 @@
     "points": "2"
   },
   {
-    "id": "72",
+    "id": "71",
     "type": "memorize",
     "dificult": "medium",
     "method": "object",
@@ -852,7 +977,7 @@
     "points": "2"
   },
   {
-    "id": "73",
+    "id": "72",
     "type": "memorize",
     "dificult": "hard",
     "method": "object",
@@ -864,7 +989,7 @@
     "points": "3"
   },
   {
-    "id": "74",
+    "id": "73",
     "type": "memorize",
     "dificult": "medium",
     "method": "object",
@@ -876,7 +1001,7 @@
     "points": "2"
   },
   {
-    "id": "75",
+    "id": "74",
     "type": "memorize",
     "dificult": "easy",
     "method": "object",
@@ -888,7 +1013,7 @@
     "points": "1"
   },
   {
-    "id": "76",
+    "id": "75",
     "type": "memorize",
     "dificult": "easy",
     "method": "object",
@@ -900,7 +1025,7 @@
     "points": "1"
   },
   {
-    "id": "77",
+    "id": "76",
     "type": "memorize",
     "dificult": "medium",
     "method": "object",
@@ -912,7 +1037,7 @@
     "points": "2"
   },
   {
-    "id": "78",
+    "id": "77",
     "type": "memorize",
     "dificult": "medium",
     "method": "object",
@@ -924,7 +1049,7 @@
     "points": "2"
   },
   {
-    "id": "79",
+    "id": "78",
     "type": "memorize",
     "dificult": "medium",
     "method": "object",
@@ -936,7 +1061,7 @@
     "points": "2"
   },
   {
-    "id": "80",
+    "id": "79",
     "type": "memorize",
     "dificult": "medium",
     "method": "object",
@@ -948,7 +1073,7 @@
     "points": "2"
   },
   {
-    "id": "81",
+    "id": "80",
     "type": "memorize",
     "dificult": "medium",
     "method": "object",
@@ -960,7 +1085,7 @@
     "points": "2"
   },
   {
-    "id": "82",
+    "id": "81",
     "type": "memorize",
     "dificult": "medium",
     "method": "object",
@@ -972,7 +1097,7 @@
     "points": "2"
   },
   {
-    "id": "83",
+    "id": "82",
     "type": "memorize",
     "dificult": "hard",
     "method": "object",
@@ -984,7 +1109,7 @@
     "points": "3"
   },
   {
-    "id": "84",
+    "id": "83",
     "type": "memorize",
     "dificult": "easy",
     "method": "object",
@@ -996,7 +1121,7 @@
     "points": "1"
   },
   {
-    "id": "85",
+    "id": "84",
     "type": "memorize",
     "dificult": "easy",
     "method": "object",
@@ -1008,7 +1133,7 @@
     "points": "1"
   },
   {
-    "id": "86",
+    "id": "85",
     "type": "memorize",
     "dificult": "easy",
     "method": "object",
@@ -1020,7 +1145,7 @@
     "points": "1"
   },
   {
-    "id": "87",
+    "id": "86",
     "type": "memorize",
     "dificult": "easy",
     "method": "object",
@@ -1032,7 +1157,7 @@
     "points": "1"
   },
   {
-    "id": "88",
+    "id": "87",
     "type": "memorize",
     "dificult": "easy",
     "method": "object",
@@ -1044,7 +1169,7 @@
     "points": "1"
   },
   {
-    "id": "89",
+    "id": "88",
     "type": "memorize",
     "dificult": "easy",
     "method": "object",
@@ -1056,7 +1181,7 @@
     "points": "1"
   },
   {
-    "id": "90",
+    "id": "89",
     "type": "memorize",
     "dificult": "medium",
     "method": "object",
@@ -1068,7 +1193,7 @@
     "points": "2"
   },
   {
-    "id": "91",
+    "id": "90",
     "type": "memorize",
     "dificult": "medium",
     "method": "object",
@@ -1080,7 +1205,7 @@
     "points": "2"
   },
   {
-    "id": "92",
+    "id": "91",
     "type": "memorize",
     "dificult": "easy",
     "method": "object",
