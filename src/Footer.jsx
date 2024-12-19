@@ -19,7 +19,9 @@ const Footer = () => {
           <div className="flex flex-row gap-2">
             <h4 className="font-bold mb-2">Js Challenges</h4>
           </div>
-          <p className=" mb-4">Tracking your activities easier and grow wisely</p>
+          <p className="mb-4">
+          Memorize first, then test with algorithms to gain better insights.
+          </p>        
         </div>
 
         {/* Right Side: Quick Navigation */}
