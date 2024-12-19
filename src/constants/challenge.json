@@ -282,7 +282,7 @@
     "method": "string",
     "function": "split('separator')",
     "instruction": "Given 'I am learning js', split the string into an array of words.",
-    "expectedResult": "['I', 'am', 'learning', 'js']",
+    "expectedResult": ["I", "am", "learning", "js"],
     "template": "function main(str='I am learning js') {\n  // Your code here\n  return '';\n}",
     "hint": "The `split('separator')` method splits a string into an array of substrings using the specified separator. \nstring.split('separator')",
     "points": "1"
@@ -297,18 +297,6 @@
     "expectedResult": "123",
     "template": "function main(num=123) {\n  // Your code here\n  return '';\n}",
     "hint": "The `toString()` method converts a number, boolean, or object to a string representation. For example, `num.toString()`.",
-    "points": "1"
-  },
-  {
-    "id": "26",
-    "type": "memorize",
-    "dificult": "easy",
-    "method": "string",
-    "function": "valueOf()",
-    "instruction": "Given a string object `new String('learning')`, retrieve its primitive string value.",
-    "expectedResult": "learning",
-    "template": "function main(strObj=new String('learning')) {\n  // Your code here\n  return '';\n}",
-    "hint": "The `valueOf()` method returns the primitive value of a string object. For example, `strObj.valueOf()`.",
     "points": "1"
   },
   {
@@ -354,7 +342,7 @@
     "method": "array",
     "function": "Array.from(str)",
     "instruction": "Given a string 'hello', use `Array.from()` to convert it into an array of characters.",
-    "expectedResult": "['h', 'e', 'l', 'l', 'o']",
+    "expectedResult": ["h", "e", "l", "l", "o"],
     "template": "function main(str='hello') {\n  // Your code here\n  return '';\n}",
     "hint": "The `Array.from()` method creates a new array from an iterable object or array-like value. \nArray.from('string')",
     "points": "1"
@@ -366,7 +354,7 @@
     "method": "array",
     "function": "Array.fromAsync()",
     "instruction": "Create an array from an asynchronous generator that yields 1, 2, and 3 using `Array.fromAsync()`.",
-    "expectedResult": "[1, 2, 3]",
+    "expectedResult": [1, 2, 3],
     "template": "async function main() {\n  async function* generator() {\n    yield 1;\n    yield 2;\n    yield 3;\n  }\n  // Your code here\n  return '';\n}",
     "hint": "The `Array.fromAsync()` method creates an array asynchronously from an async iterable object. \nArray.fromAsync(asyncIterable)",
     "points": "2"
@@ -390,7 +378,7 @@
     "method": "array",
     "function": "Array.of()",
     "instruction": "Use `Array.of()` to create an array containing the numbers 1, 2, and 3.",
-    "expectedResult": "[1, 2, 3]",
+    "expectedResult": [1, 2, 3],
     "template": "function main() {\n  // Your code here\n  return '';\n}",
     "hint": "The `Array.of()` method creates a new array from its arguments. \nArray.of(1, 2, 3)",
     "points": "1"
@@ -414,7 +402,7 @@
     "method": "array",
     "function": "Array.concat()",
     "instruction": "Combine the arrays [1, 2] and [3, 4] using `concat()`.",
-    "expectedResult": "[1, 2, 3, 4]",
+    "expectedResult": [1, 2, 3, 4],
     "template": "function main(arr1=[1, 2], arr2=[3, 4]) {\n  // Your code here\n  return '';\n}",
     "hint": "The `concat()` method merges two or more arrays into a new array. \narray.concat(array2)",
     "points": "1"
@@ -426,7 +414,7 @@
     "method": "array",
     "function": "Array.copyWithin(target, start)",
     "instruction": "Given the array [1, 2, 3, 4, 5], use `copyWithin()` to copy elements starting at index 0 to index 3.",
-    "expectedResult": "[1, 2, 3, 1, 2]",
+    "expectedResult": [1, 2, 3, 1, 2],
     "template": "function main(arr=[1, 2, 3, 4, 5]) {\n  // Your code here\n  return '';\n}",
     "hint": "The `copyWithin()` method copies part of an array to another location in the same array. \narray.copyWithin(target, start)",
     "points": "2"
@@ -438,7 +426,7 @@
     "method": "array",
     "function": "Array.entries()",
     "instruction": "Given the array ['a', 'b', 'c'], use `entries()` to return an iterator of index-value pairs.",
-    "expectedResult": "[[0, 'a'], [1, 'b'], [2, 'c']]",
+    "expectedResult": [[0, "a"], [1, "b"], [2, "c"]],
     "template": "function main(arr=['a', 'b', 'c']) {\n  // Your code here\n  return '';\n}",
     "hint": "The `entries()` method returns an iterator of key-value pairs. Use `Array.from()` to convert it to an array.",
     "points": "2"
@@ -462,7 +450,7 @@
     "method": "array",
     "function": "Array.fill()",
     "instruction": "Fill the array [1, 2, 3, 4] with the value 0 from index 1 to 3 using `fill()`.",
-    "expectedResult": "[1, 0, 0, 4]",
+    "expectedResult": [1, 0, 0, 4],
     "template": "function main(arr=[1, 2, 3, 4]) {\n  // Your code here\n  return '';\n}",
     "hint": "The `fill()` method changes all elements in a range to a static value. \narray.fill(value, start, end)",
     "points": "1"
@@ -474,7 +462,7 @@
     "method": "array",
     "function": "Array.filter()",
     "instruction": "Filter out all odd numbers from the array [1, 2, 3, 4, 5] using `filter()`.",
-    "expectedResult": "[2, 4]",
+    "expectedResult": [2, 4],
     "template": "function main(arr=[1, 2, 3, 4, 5]) {\n  // Your code here\n  return '';\n}",
     "hint": "The `filter()` method creates a new array with elements that pass a condition. \narray.filter(callback)",
     "points": "2"
@@ -534,7 +522,7 @@
     "method": "array",
     "function": "Array.flat()",
     "instruction": "Flatten the array [1, [2, [3, [4]]]] one level deep using `flat()`.",
-    "expectedResult": "[1, 2, [3, [4]]]",
+    "expectedResult": [1, 2, [3, [4]]],
     "template": "function main(arr=[1, [2, [3, [4]]]]) {\n  // Your code here\n  return '';\n}",
     "hint": "The `flat()` method creates a new array with elements flattened to a specified depth. \narray.flat(depth)",
     "points": "2"
@@ -546,7 +534,7 @@
     "method": "array",
     "function": "Array.flatMap()",
     "instruction": "Map each number in [1, 2, 3] to an array containing the number and its square, then flatten the result using `flatMap()`.",
-    "expectedResult": "[1, 1, 2, 4, 3, 9]",
+    "expectedResult": [1, 1, 2, 4, 3, 9],
     "template": "function main(arr=[1, 2, 3]) {\n  // Your code here\n  return '';\n}",
     "hint": "The `flatMap()` method maps and flattens the result into a new array. \narray.flatMap(callback)",
     "points": "2"
@@ -570,7 +558,7 @@
     "method": "array",
     "function": "Array.includes()",
     "instruction": "Check if the array [1, 2, 3, 4] includes the number 3 using `includes()`.",
-    "expectedResult": "true",
+    "expectedResult": true,
     "template": "function main(arr=[1, 2, 3, 4]) {\n  // Your code here\n  return '';\n}",
     "hint": "The `includes()` method checks if an array contains a specific value. \narray.includes(value)",
     "points": "1"
@@ -582,7 +570,7 @@
     "method": "array",
     "function": "Array.indexOf()",
     "instruction": "Find the index of the first occurrence of the number 3 in the array [1, 2, 3, 4, 3] using `indexOf()`.",
-    "expectedResult": "2",
+    "expectedResult": 2,
     "template": "function main(arr=[1, 2, 3, 4, 3]) {\n  // Your code here\n  return '';\n}",
     "hint": "The `indexOf()` method returns the first index where the value occurs. \narray.indexOf(value)",
     "points": "1"
@@ -594,7 +582,7 @@
     "method": "array",
     "function": "Array.join()",
     "instruction": "Join all elements of the array ['a', 'b', 'c'] into a single string, separated by '-' using `join()`.",
-    "expectedResult": "'a-b-c'",
+    "expectedResult": "a-b-c",
     "template": "function main(arr=['a', 'b', 'c']) {\n  // Your code here\n  return '';\n}",
     "hint": "The `join()` method combines all elements of an array into a string. \narray.join(separator)",
     "points": "1"
@@ -606,7 +594,7 @@
     "method": "array",
     "function": "Array.keys()",
     "instruction": "Return an iterator of the keys (indexes) of the array ['a', 'b', 'c'] using `keys()`.",
-    "expectedResult": "[0, 1, 2]",
+    "expectedResult": [0, 1, 2],
     "template": "function main(arr=['a', 'b', 'c']) {\n  // Your code here\n  return '';\n}",
     "hint": "The `keys()` method returns an iterator of array indexes. Use `Array.from()` to convert it to an array.",
     "points": "2"
@@ -618,7 +606,7 @@
     "method": "array",
     "function": "Array.lastIndexOf()",
     "instruction": "Find the index of the last occurrence of the number 3 in the array [1, 2, 3, 4, 3] using `lastIndexOf()`.",
-    "expectedResult": "4",
+    "expectedResult": 4,
     "template": "function main(arr=[1, 2, 3, 4, 3]) {\n  // Your code here\n  return '';\n}",
     "hint": "The `lastIndexOf()` method returns the last index where the value occurs. \narray.lastIndexOf(value)",
     "points": "1"
@@ -630,7 +618,7 @@
     "method": "array",
     "function": "Array.map()",
     "instruction": "Create a new array by squaring each number in [1, 2, 3] using `map()`.",
-    "expectedResult": "[1, 4, 9]",
+    "expectedResult": [1, 4, 9],
     "template": "function main(arr=[1, 2, 3]) {\n  // Your code here\n  return '';\n}",
     "hint": "The `map()` method creates a new array by applying a function to each element. \narray.map(callback)",
     "points": "2"
@@ -642,7 +630,7 @@
     "method": "array",
     "function": "Array.pop()",
     "instruction": "Remove the last element from the array [1, 2, 3] using `pop()`.",
-    "expectedResult": "3",
+    "expectedResult": 3,
     "template": "function main(arr=[1, 2, 3]) {\n  // Your code here\n  return '';\n}",
     "hint": "The `pop()` method removes the last element of an array and returns it. \narray.pop()",
     "points": "1"
@@ -654,7 +642,7 @@
     "method": "array",
     "function": "Array.push()",
     "instruction": "Add the number 4 to the array [1, 2, 3] using `push()`.",
-    "expectedResult": "[1, 2, 3, 4]",
+    "expectedResult": [1, 2, 3, 4],
     "template": "function main(arr=[1, 2, 3]) {\n  // Your code here\n  return '';\n}",
     "hint": "The `push()` method adds one or more elements to the end of an array. \narray.push(value)",
     "points": "1"
@@ -666,7 +654,7 @@
     "method": "array",
     "function": "Array.reduce()",
     "instruction": "Calculate the sum of all numbers in the array [1, 2, 3, 4] using `reduce()`.",
-    "expectedResult": "10",
+    "expectedResult": 10,
     "template": "function main(arr=[1, 2, 3, 4]) {\n  // Your code here\n  return '';\n}",
     "hint": "The `reduce()` method applies a function against an accumulator to reduce the array to a single value. \narray.reduce(callback, initialValue)",
     "points": "2"
@@ -678,7 +666,7 @@
     "method": "array",
     "function": "Array.reverse()",
     "instruction": "Reverse the array [1, 2, 3, 4] using `reverse()`.",
-    "expectedResult": "[4, 3, 2, 1]",
+    "expectedResult": [4, 3, 2, 1],
     "template": "function main(arr=[1, 2, 3, 4]) {\n  // Your code here\n  return '';\n}",
     "hint": "The `reverse()` method reverses the array in place. \narray.reverse()",
     "points": "1"
@@ -690,7 +678,7 @@
     "method": "array",
     "function": "Array.shift()",
     "instruction": "Remove the first element of the array [1, 2, 3] using `shift()`.",
-    "expectedResult": "[2, 3]",
+    "expectedResult": [2, 3],
     "template": "function main(arr=[1, 2, 3]) {\n  // Your code here\n  return '';\n}",
     "hint": "The `shift()` method removes the first element of an array and returns it. \narray.shift()",
     "points": "1"
@@ -702,7 +690,7 @@
     "method": "array",
     "function": "Array.slice()",
     "instruction": "Extract the subarray [2, 3] from the array [1, 2, 3, 4] using `slice()`.",
-    "expectedResult": "[2, 3]",
+    "expectedResult": [2, 3],
     "template": "function main(arr=[1, 2, 3, 4]) {\n  // Your code here\n  return '';\n}",
     "hint": "The `slice()` method returns a shallow copy of a portion of an array. \narray.slice(start, end)",
     "points": "1"
@@ -726,7 +714,7 @@
     "method": "array",
     "function": "Array.sort()",
     "instruction": "Sort the array [3, 1, 4, 2] in ascending order using `sort()`.",
-    "expectedResult": "[1, 2, 3, 4]",
+    "expectedResult": [1, 2, 3, 4],
     "template": "function main(arr=[3, 1, 4, 2]) {\n  // Your code here\n  return '';\n}",
     "hint": "The `sort()` method sorts elements in place. Provide a comparator function for numeric sorting. \narray.sort((a, b) => a - b)",
     "points": "2"
@@ -738,7 +726,7 @@
     "method": "array",
     "function": "Array.splice()",
     "instruction": "Remove 2 elements starting at index 1 in the array [1, 2, 3, 4] using `splice()`.",
-    "expectedResult": "[1, 4]",
+    "expectedResult": [1, 4],
     "template": "function main(arr=[1, 2, 3, 4]) {\n  // Your code here\n  return '';\n}",
     "hint": "The `splice()` method changes the contents of an array by removing, replacing, or adding elements. \narray.splice(start, deleteCount)",
     "points": "2"
@@ -750,7 +738,7 @@
     "method": "array",
     "function": "Array.toLocaleString()",
     "instruction": "Convert the array [1000, 'a'] to a localized string using `toLocaleString()`.",
-    "expectedResult": "'1,000,a'",
+    "expectedResult": "1,000,a",
     "template": "function main(arr=[1000, 'a']) {\n  // Your code here\n  return '';\n}",
     "hint": "The `toLocaleString()` method converts array elements to a string using locale-specific formatting. \narray.toLocaleString()",
     "points": "2"
@@ -762,7 +750,7 @@
     "method": "array",
     "function": "Array.toReversed()",
     "instruction": "Return a reversed version of the array [1, 2, 3, 4] using `toReversed()`.",
-    "expectedResult": "[4, 3, 2, 1]",
+    "expectedResult": [4, 3, 2, 1],
     "template": "function main(arr=[1, 2, 3, 4]) {\n  // Your code here\n  return '';\n}",
     "hint": "The `toReversed()` method returns a new reversed array without mutating the original array. \narray.toReversed()",
     "points": "1"
@@ -774,7 +762,7 @@
     "method": "array",
     "function": "Array.toSorted()",
     "instruction": "Return a sorted version of the array [3, 1, 4, 2] using `toSorted()`.",
-    "expectedResult": "[1, 2, 3, 4]",
+    "expectedResult": [1, 2, 3, 4],
     "template": "function main(arr=[3, 1, 4, 2]) {\n  // Your code here\n  return '';\n}",
     "hint": "The `toSorted()` method returns a new sorted array without mutating the original. Provide a comparator for numeric sorting. \narray.toSorted((a, b) => a - b)",
     "points": "1"
@@ -786,7 +774,7 @@
     "method": "array",
     "function": "Array.toSpliced()",
     "instruction": "Remove 2 elements starting at index 1 from the array [1, 2, 3, 4] using `toSpliced()`.",
-    "expectedResult": "[1, 4]",
+    "expectedResult": [1, 4],
     "template": "function main(arr=[1, 2, 3, 4]) {\n  // Your code here\n  return '';\n}",
     "hint": "The `toSpliced()` method returns a new array with the specified changes without modifying the original. \narray.toSpliced(start, deleteCount)",
     "points": "1"
@@ -798,7 +786,7 @@
     "method": "array",
     "function": "Array.toString()",
     "instruction": "Convert the array [1, 2, 3] to a string using `toString()`.",
-    "expectedResult": "'1,2,3'",
+    "expectedResult": "1,2,3",
     "template": "function main(arr=[1, 2, 3]) {\n  // Your code here\n  return '';\n}",
     "hint": "The `toString()` method converts an array into a string. \narray.toString()",
     "points": "1"
@@ -810,7 +798,7 @@
     "method": "array",
     "function": "Array.unshift()",
     "instruction": "Add the number 0 to the beginning of the array [1, 2, 3] using `unshift()`.",
-    "expectedResult": "[0, 1, 2, 3]",
+    "expectedResult": [0, 1, 2, 3],
     "template": "function main(arr=[1, 2, 3]) {\n  // Your code here\n  return '';\n}",
     "hint": "The `unshift()` method adds one or more elements to the beginning of an array. \narray.unshift(value)",
     "points": "1"
@@ -822,7 +810,7 @@
     "method": "array",
     "function": "Array.values()",
     "instruction": "Return an iterator of values from the array ['a', 'b', 'c'] using `values()`.",
-    "expectedResult": "['a', 'b', 'c']",
+    "expectedResult": ["a", "b", "c"],
     "template": "function main(arr=['a', 'b', 'c']) {\n  // Your code here\n  return '';\n}",
     "hint": "The `values()` method returns an iterator of the array's values. Use `Array.from()` to convert it to an array.",
     "points": "2"
@@ -834,7 +822,7 @@
     "method": "array",
     "function": "Array.with()",
     "instruction": "Replace the element at index 1 with 100 in the array [1, 2, 3] using `with()`.",
-    "expectedResult": "[1, 100, 3]",
+    "expectedResult": [1, 100, 3],
     "template": "function main(arr=[1, 2, 3]) {\n  // Your code here\n  return '';\n}",
     "hint": "The `with()` method creates a new array with the specified index replaced. \narray.with(index, value)",
     "points": "2"

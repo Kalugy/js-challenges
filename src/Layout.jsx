@@ -6,8 +6,6 @@ import Footer from './Footer';
 
 export default function Layout() {
   const { theme } = useTheme();
-  console.log('fdfdfd', theme.background)
-  console.log('fdfdfd', theme.textColor)
 
   return (
     <div 

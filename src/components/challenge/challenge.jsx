@@ -3,12 +3,16 @@ import challenges from "../../constants/challenge.json";
 
 import { useTheme } from "../../context/ThemeContext";
 
+import CodeMirror from "@uiw/react-codemirror";
+import { javascript } from "@codemirror/lang-javascript";
+import { oneDark } from "@codemirror/theme-one-dark";
+
+
 export default function ChallengeComponent() {
   const [currentChallengeIndex, setCurrentChallengeIndex] = useState(0);
   const [userCode, setUserCode] = useState(challenges[currentChallengeIndex].template);
   const [feedback, setFeedback] = useState(null);
   const [showHint, setShowHint] = useState(false);
-  const [counterRun, setCounterRun] = useState(0);
   const [points, setPoints] = useState(0);
   const { theme } = useTheme()
   const currentChallenge = challenges[currentChallengeIndex];
@@ -20,12 +24,15 @@ export default function ChallengeComponent() {
 
   const handleSubmit = () => {
     try {
+      console.log(userCode,'user');
       const userFunction = new Function(`${userCode}\nreturn main;`)();
       const result = Array.isArray(currentChallenge.expectedResult)
         ? JSON.stringify(userFunction())
         : userFunction();
 
-      if (result === JSON.stringify(currentChallenge.expectedResult) || result === currentChallenge.expectedResult) {
+      if (result === JSON.stringify(currentChallenge.expectedResult) || 
+          result === currentChallenge.expectedResult 
+        ) {
         setFeedback("Success! Your solution is correct.");
         setPoints(prev => prev + 1)
 
@@ -37,10 +44,9 @@ export default function ChallengeComponent() {
     }
   };
 
-  const handleRun = () => {
-    setCounterRun((prev) => prev + 1)
+  const handleRun = (value) => {
     try {
-      const userFunction = new Function(`${userCode}\nreturn main;`)();
+      const userFunction = new Function(`${value}\nreturn main;`)();
 
       let capturedLog = [];
       const originalLog = console.log;
@@ -69,7 +75,6 @@ export default function ChallengeComponent() {
   };
 
   const handleNextChallenge = () => {
-    console.log('calling me ')
     if (currentChallengeIndex < challenges.length - 1) {
       setCurrentChallengeIndex(prev => prev + 1);
       setUserCode(challenges[currentChallengeIndex + 1].template);
@@ -78,8 +83,6 @@ export default function ChallengeComponent() {
     } else {
       setFeedback("You have completed all challenges!");
     }
-    console.log('calling me '+ currentChallengeIndex)
-
   };
 
   const handlePreviousChallenge = () => {
@@ -127,7 +130,7 @@ export default function ChallengeComponent() {
     return () => {
       window.removeEventListener("keydown", listener);
     };
-  }, [currentChallengeIndex, counterRun]); // Empty dependency array ensures this runs only once
+  }, [currentChallengeIndex]); // Empty dependency array ensures this runs only once
 
   return (
     <div className="p-6 max-w-4xl mx-auto">
@@ -187,19 +190,13 @@ export default function ChallengeComponent() {
           <p className="">{currentChallenge.hint}</p>
         </div>
       )}
-      <div className="flex space-x-4">
-        <p className=" font-semibold">
-          Points: {points} - 
-          totalRuns: {counterRun}
-          </p>
-      </div>
-      <textarea
+      
+      {/* <textarea
         value={userCode}
         onChange={handleCodeChange}
         onKeyDown={(e) => {
           if (e.shiftKey && e.key === "Enter") {
-            e.preventDefault(); // Prevent the default behavior (jumping to a new line)
-            // You can also perform any custom logic here, such as submitting or handling the input
+            e.preventDefault(); 
             console.log("Shift+Enter was pressed");
           }
         }}
@@ -209,36 +206,112 @@ export default function ChallengeComponent() {
           backgroundColor: theme.secondaryBg,
           color: theme.color
         }}
-      ></textarea>
-      
-      
-      <div className="flex space-x-4">
-        <button
-          onClick={handleRun}
-          className="px-4 py-2 rounded hover:bg-blue-600"
-          style={{
-            backgroundColor: theme.btnColor,
-          }}
+      ></textarea> */}
+      <div className="">
+      {/* Layout Wrapper */}
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-4"
+        style={{
+          backgroundColor: theme.secondaryBg,
+          
+        }}
+      >
+        {/* Code Editor Section */}
+        <div className="lg:col-span-2 rounded shadow-md p-4"
+          // style={{
+          //   backgroundColor: theme.secondaryBg,
+          // }}
         >
-           Run
-        </button>
-        <button
-          onClick={handleSubmit}
-          className="px-4 py-2 rounded hover:bg-blue-600"
-          style={{
-            backgroundColor: theme.btnColor,
-          }}
-        >
-          Submit
-        </button>
-      </div>
+          <h2 className="text-lg font-semibold mb-2 ">
+            Code Editor
+            <div className="flex space-x-4 justify-between items-center">
+              
+              Points: {points}
+              <div className="flex space-x-4">
+              {/* <button
+                onClick={handleRun}
+                className="px-4 py-2 rounded hover:bg-blue-600"
+                style={{
+                  backgroundColor: theme.btnColor,
+                }}
+              >
+                Run
+              </button> */}
+              <button
+                onClick={()=>handleSubmit()}
+                className="text-sm px-3 py-1 rounded hover:bg-blue-600"
+                style={{
+                  backgroundColor: theme.btnColor,
+                }}
+              >
+                Submit
+              </button>
+              </div>
+            </div>
+          </h2>
+          <CodeMirror
+            value={userCode}
+            height="150px"
+            theme={theme.currentTheme === "dark" || "custom" ? oneDark : "light"}
+            extensions={[javascript()]}
+            onChange={(value) => {
+              setUserCode(value); // Update state
+              handleRun(value); // Pass the latest value directly
+            }}  
+            options={{
+              lineNumbers: true,
+              indentWithTabs: true,
+              tabSize: 2,
+            }}
+          />
+        </div>
 
+        {/* Feedback Section */}
+        <div className=" rounded shadow-md p-4"
+          style={{
+            backgroundColor: theme.secondaryBg,
+          }}
+        >
+          <h2 className="text-lg font-semibold mb-2 ">
+            Output
+          </h2>
+          <div className="flex flex-col rounded p-4"
+            style={{
+              backgroundColor: theme.background,
+            }}
+          >
+            <p className="text-xs font-bold  mb-2">
+              Result:
+            </p>
+            <p className="text-lg ">
+                {feedback}
+            </p>
+          </div>
+          {/* <h2 className="text-lg font-semibold mb-2 ">
+            Submit
+          </h2> */}
+        </div>
+      </div>
+    </div>
+{/* 
+      <CodeMirror
+        value={userCode}
+        height="150px"
+        theme={theme.currentTheme === "dark" || "custom" ? oneDark : "light"}
+        extensions={[javascript()]}
+        onChange={(value) => setUserCode(value)}
+        options={{
+          lineNumbers: true,
+          indentWithTabs: true,
+          tabSize: 2,
+        }}
+      />
       {feedback &&
         <div className="flex flex-col w-100 bg-slate-500 m-2 rounded">
           <p className="text-xs text-white p-2 font-bold">Output: </p> 
           <p className="text-lg text-white p-2 ">{feedback}</p>
         </div>
-      }
+      } */}
+      
       
     </div>
   );
