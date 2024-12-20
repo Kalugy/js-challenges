@@ -1,14 +1,15 @@
 import React, { useState } from "react";
 import { useTheme } from "../../context/ThemeContext";
+import { shortcutsConstant } from "../../constants/generalContants";
 
 export default function SettingsShorcuts() {
   const { theme } = useTheme()
   // Initial shortcut settings
   const [shortcuts, setShortcuts] = useState({
-    previousChallenge: "Ctrl + ArrowLeft",
-    nextChallenge: "Ctrl + ArrowRight",
-    submit: "Ctrl + Enter",
-    run: "Shift + Enter",
+    previousChallenge: shortcutsConstant.previousChallenge,
+    nextChallenge: shortcutsConstant.nextChallenge,
+    submit: shortcutsConstant.submit,
+    hint: shortcutsConstant.hint
   });
 
   // Handle user input change for shortcuts
@@ -48,12 +49,10 @@ export default function SettingsShorcuts() {
           value={shortcuts.submit}
           onInputChange={(value) => handleInputChange("submit", value)}
         />
-
-        {/* Run */}
         <ShortcutRow
-          label="Run"
-          value={shortcuts.run}
-          onInputChange={(value) => handleInputChange("run", value)}
+          label="Show hint"
+          value={shortcuts.hint}
+          onInputChange={(value) => handleInputChange("hint", value)}
         />
       </div>
     </div>

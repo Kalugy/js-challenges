@@ -46,16 +46,7 @@ const Footer = () => {
       
       {/* Copyright Section */}
       <div className="mt-8 text-center ">
-        &copy; {new Date().getFullYear()} JS Challenges. Licensed under the{" "}
-        <a
-          href="https://www.apache.org/licenses/LICENSE-2.0"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="underline font-bold"
-        >
-          Apache 2.0 License
-        </a>
-        . Open source and open for contributions!
+        &copy; {new Date().getFullYear()} JS Challenges. Open source and open for contributions!
         <GitHubLink
           url="https://github.com/Kalugy/js-challenges"
           size={16}

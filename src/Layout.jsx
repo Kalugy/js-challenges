@@ -20,7 +20,7 @@ export default function Layout() {
       <Navbar />
 
       {/* Main content area */}
-      <div className={`min-w-80 p-20 mt-15`}>
+      <div className={`min-w-80 py-20 md:p-20 md:mt-15`}>
         <Outlet /> {/* Dynamic content goes here */}
       </div>
 

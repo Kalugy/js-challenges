@@ -23,7 +23,7 @@ export const themes = {
     secondaryBg: "#020718",
     btnColor: "#3B82F6",
     btnDangerColor: "#EF4444",
-    btnAlertColor: "#c48200",
+    btnAlertColor: "#a57a2b",
     textSize: 'text-md'
   },
   custom: { 
@@ -37,3 +37,9 @@ export const themes = {
   },
 };
 
+export const shortcutsConstant = {
+  submit: "Ctrl + Q",
+  previousChallenge: "Ctrl + Arrow Left",
+  nextChallenge: "Ctrl + Arrow Right",
+  hint: "Ctrl + H",
+}

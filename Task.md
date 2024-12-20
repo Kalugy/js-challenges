@@ -1,8 +1,8 @@
 # TODOS
 ## Challenges array should compare efficienly
-- [] Challenges
+- [x] Challenges
   [X] Challenges array should compare efficienly on submit
-  [] Fix shortcout submit
+  [x] Fix shortcout submit
   [x] running fix so running on input change so its not necesary to keep running on push button
   [X] better UI on input code 
   [X] better layout to input and running is more easy to see

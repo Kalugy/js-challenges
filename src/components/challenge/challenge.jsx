@@ -1,12 +1,12 @@
 import { useState, useEffect } from "react";
 import challenges from "../../constants/challenge.json";
-
 import { useTheme } from "../../context/ThemeContext";
-
 import CodeMirror from "@uiw/react-codemirror";
 import { javascript } from "@codemirror/lang-javascript";
 import { oneDark } from "@codemirror/theme-one-dark";
-
+import HelperButton from "../rehusables/helperButton";
+import SettingsShorcuts from "../settings/SettingsShorcuts";
+import {FaEyeSlash, FaEye} from 'react-icons/fa';
 
 export default function ChallengeComponent() {
   const [currentChallengeIndex, setCurrentChallengeIndex] = useState(0);
@@ -17,14 +17,9 @@ export default function ChallengeComponent() {
   const { theme } = useTheme()
   const currentChallenge = challenges[currentChallengeIndex];
 
-  
-  const handleCodeChange = (event) => {
-    setUserCode(event.target.value);
-  };
 
   const handleSubmit = () => {
     try {
-      console.log(userCode,'user');
       const userFunction = new Function(`${userCode}\nreturn main;`)();
       const result = Array.isArray(currentChallenge.expectedResult)
         ? JSON.stringify(userFunction())
@@ -95,30 +90,29 @@ export default function ChallengeComponent() {
   };
 
   const handleHintToggle = () => {
-    setShowHint(!showHint);
+    setShowHint(prev => !prev);
   };
 
   const handleKeyDown = (event) => {
-    switch (event.key) {
-      case "ArrowLeft":
-        if (event.ctrlKey) {
+    if (event.ctrlKey) {
+      // Check for keys pressed with Ctrl
+      switch (event.key.toLowerCase()) { // Use toLowerCase for case-insensitivity
+        case "arrowleft":
           handlePreviousChallenge();
-        }
-        break;
-      case "ArrowRight":
-        if (event.ctrlKey) {
+          break;
+        case "arrowright":
           handleNextChallenge();
-        }
-        break;
-      case "Enter":
-        if (event.ctrlKey) {
+          break;
+        case "q":
           handleSubmit();
-        }else if (event.shiftKey) {
-          handleRun();
-        }
-        break;
-      default:
-        break;
+          break;
+        case "h":
+          event.preventDefault();
+          handleHintToggle();
+          break;
+        default:
+          break;
+      }
     }
   };
 
@@ -130,11 +124,13 @@ export default function ChallengeComponent() {
     return () => {
       window.removeEventListener("keydown", listener);
     };
-  }, [currentChallengeIndex]); // Empty dependency array ensures this runs only once
+  }, [currentChallengeIndex, userCode]); // Empty dependency array ensures this runs only once
+
+ 
 
   return (
-    <div className="p-6 max-w-4xl mx-auto">
-      <div 
+<div className="px-6 max-w-screen-md md:max-w-screen-lg mx-auto">
+    <div 
         className="p-4 rounded shadow-md mb-4"
         style={{
           backgroundColor: theme.secondaryBg,
@@ -170,12 +166,20 @@ export default function ChallengeComponent() {
         <p className="mb-2">{currentChallenge.instruction}</p>
         <button
           onClick={handleHintToggle}
-          className=" px-4 py-2 rounded "
+          className="px-3 py-1 rounded "
           style={{
             backgroundColor: theme.btnAlertColor,
           }}
         >
-          {showHint ? "Hide Hint" : "Show Hint"}
+          {showHint ? (
+            <>
+              <FaEyeSlash className="inline-block"/> Hide
+            </>
+          ) : (
+            <>
+              <FaEye className="inline-block" /> Hint
+            </>
+          )}
         </button>
       </div>
       
@@ -183,7 +187,7 @@ export default function ChallengeComponent() {
         <div 
           className="p-4 rounded shadow-md mb-4"
           style={{
-            backgroundColor: theme.secondaryBg,
+            backgroundColor: theme.btnAlertColor,
           }}
         >
           <h3 className="text-xl font-semibold mb-2">Hint</h3>
@@ -191,22 +195,6 @@ export default function ChallengeComponent() {
         </div>
       )}
       
-      {/* <textarea
-        value={userCode}
-        onChange={handleCodeChange}
-        onKeyDown={(e) => {
-          if (e.shiftKey && e.key === "Enter") {
-            e.preventDefault(); 
-            console.log("Shift+Enter was pressed");
-          }
-        }}
-        rows="5"
-        className="w-full p-2 border rounded mb-4"
-        style={{
-          backgroundColor: theme.secondaryBg,
-          color: theme.color
-        }}
-      ></textarea> */}
       <div className="">
       {/* Layout Wrapper */}
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-4"
@@ -217,25 +205,15 @@ export default function ChallengeComponent() {
       >
         {/* Code Editor Section */}
         <div className="lg:col-span-2 rounded shadow-md p-4"
-          // style={{
-          //   backgroundColor: theme.secondaryBg,
-          // }}
         >
           <h2 className="text-lg font-semibold mb-2 ">
-            Code Editor
+            Code Editor 
+            <HelperButton label="" className="ml-2 my-4">
+              <SettingsShorcuts />
+            </HelperButton>
             <div className="flex space-x-4 justify-between items-center">
-              
               Points: {points}
               <div className="flex space-x-4">
-              {/* <button
-                onClick={handleRun}
-                className="px-4 py-2 rounded hover:bg-blue-600"
-                style={{
-                  backgroundColor: theme.btnColor,
-                }}
-              >
-                Run
-              </button> */}
               <button
                 onClick={()=>handleSubmit()}
                 className="text-sm px-3 py-1 rounded hover:bg-blue-600"
@@ -256,7 +234,7 @@ export default function ChallengeComponent() {
             onChange={(value) => {
               setUserCode(value); // Update state
               handleRun(value); // Pass the latest value directly
-            }}  
+            }}
             options={{
               lineNumbers: true,
               indentWithTabs: true,
@@ -286,32 +264,10 @@ export default function ChallengeComponent() {
                 {feedback}
             </p>
           </div>
-          {/* <h2 className="text-lg font-semibold mb-2 ">
-            Submit
-          </h2> */}
         </div>
       </div>
     </div>
-{/* 
-      <CodeMirror
-        value={userCode}
-        height="150px"
-        theme={theme.currentTheme === "dark" || "custom" ? oneDark : "light"}
-        extensions={[javascript()]}
-        onChange={(value) => setUserCode(value)}
-        options={{
-          lineNumbers: true,
-          indentWithTabs: true,
-          tabSize: 2,
-        }}
-      />
-      {feedback &&
-        <div className="flex flex-col w-100 bg-slate-500 m-2 rounded">
-          <p className="text-xs text-white p-2 font-bold">Output: </p> 
-          <p className="text-lg text-white p-2 ">{feedback}</p>
-        </div>
-      } */}
-      
+
       
     </div>
   );
