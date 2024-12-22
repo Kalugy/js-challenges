@@ -7,6 +7,11 @@
   [X] better UI on input code 
   [X] better layout to input and running is more easy to see
 
+
+## Improvements
+- [ ] challenges show methods or not and shorcut
+- [ ] shorcut custom keys so user define their own shorcuts
+
 ---
 ## Create crud view to challenges 
 - [ ] Do the complete crud for challenges for now comments

@@ -46,7 +46,7 @@ const Footer = () => {
       
       {/* Copyright Section */}
       <div className="mt-8 text-center ">
-        &copy; {new Date().getFullYear()} JS Challenges. Open source and open for contributions!
+        &copy; {new Date().getFullYear()} JS Challenges. Open source and open for contributions
         <GitHubLink
           url="https://github.com/Kalugy/js-challenges"
           size={16}
