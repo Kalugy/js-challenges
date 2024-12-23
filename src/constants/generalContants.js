@@ -42,4 +42,5 @@ export const shortcutsConstant = {
   previousChallenge: "Ctrl + Arrow Left",
   nextChallenge: "Ctrl + Arrow Right",
   hint: "Ctrl + H",
+  methods: "Ctrl + M",
 }

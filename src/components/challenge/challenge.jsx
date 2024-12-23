@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import challenges from "../../constants/challenge.json";
 import { useTheme } from "../../context/ThemeContext";
 import CodeMirror from "@uiw/react-codemirror";
@@ -7,12 +7,17 @@ import { oneDark } from "@codemirror/theme-one-dark";
 import HelperButton from "../rehusables/helperButton";
 import SettingsShorcuts from "../settings/SettingsShorcuts";
 import {FaEyeSlash, FaEye} from 'react-icons/fa';
+import { EditorView } from '@codemirror/view';
+
 
 export default function ChallengeComponent() {
+  const editorRef = useRef();
+
   const [currentChallengeIndex, setCurrentChallengeIndex] = useState(0);
   const [userCode, setUserCode] = useState(challenges[currentChallengeIndex].template);
   const [feedback, setFeedback] = useState(null);
   const [showHint, setShowHint] = useState(false);
+  const [showMethods, setShowMethods] = useState(false);
   const [points, setPoints] = useState(0);
   const { theme } = useTheme()
   const currentChallenge = challenges[currentChallengeIndex];
@@ -110,6 +115,10 @@ export default function ChallengeComponent() {
           event.preventDefault();
           handleHintToggle();
           break;
+        case "m":
+          event.preventDefault();
+          setShowMethods(prev => !prev);
+          break;
         default:
           break;
       }
@@ -120,10 +129,22 @@ export default function ChallengeComponent() {
   useEffect(() => {
     const listener = (event) => handleKeyDown(event); // Ensure proper function reference
     window.addEventListener("keydown", listener);
+    if (editorRef.current && editorRef.current.view) {
+      const view = editorRef.current.view;
+      const targetString = "';"; // String where you want the cursor
+      const pos = view.state.doc.toString().lastIndexOf(targetString);
+      if (pos !== -1) {
+        view.dispatch({
+          selection: { anchor: pos },
+          scrollIntoView: true,
+        });
+      }
+    }
     // Cleanup the event listener on unmount
     return () => {
       window.removeEventListener("keydown", listener);
     };
+    
   }, [currentChallengeIndex, userCode]); // Empty dependency array ensures this runs only once
 
  
@@ -161,7 +182,54 @@ export default function ChallengeComponent() {
         </button>
         </div>
         <p className="mb-1"><strong>Type:</strong> {currentChallenge.type}</p>
-        <p className="mb-1"><strong>Method:</strong> {currentChallenge.method} - {currentChallenge.function}</p>
+        
+        <p className="mb-1">
+          <strong> Method:</strong> 
+          {showMethods ? (
+            <div className="relative inline-block group">
+              <button
+                onClick={() => setShowMethods((prev) => !prev)}
+                className="px-3 py-1 rounded"
+              >
+                <FaEyeSlash
+                  className="inline-block text-lg"
+                  style={{
+                    color: theme.btnColor,
+                  }}
+                />
+              </button>
+              <span className="absolute hidden min-w-32 text-center group-hover:block text-md rounded-md p-1 mt-1 z-10"
+                style={{
+                  backgroundColor: theme.background,
+                  color: theme.text,
+                }}
+                >
+                Show Method
+              </span>
+            </div>
+          ) : (
+            <div className="relative inline-block group">
+              <button onClick={()=>setShowMethods(!showMethods)} className="px-3 py-1 rounded ">
+                <FaEye 
+                  className="inline-block text-lg" 
+                  style={{
+                    color: theme.btnColor,
+                  }}  
+                /> 
+              </button>
+              {currentChallenge.method} - {currentChallenge.function}
+              <span className="absolute hidden min-w-32 text-center group-hover:block text-md rounded-md p-1 mt-1 z-10"
+                style={{
+                  backgroundColor: theme.background,
+                  color: theme.text,
+                }}
+                >
+                Hide Method
+              </span>
+            </div>
+          )}
+        </p>
+        
         <h4 className="font-semibold  mb-2">Instructions: </h4>
         <p className="mb-2">{currentChallenge.instruction}</p>
         <button
@@ -227,6 +295,7 @@ export default function ChallengeComponent() {
             </div>
           </h2>
           <CodeMirror
+            ref={editorRef}
             value={userCode}
             height="150px"
             theme={theme.currentTheme === "dark" || "custom" ? oneDark : "light"}

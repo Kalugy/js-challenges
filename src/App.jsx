@@ -4,7 +4,11 @@ import HomePage from './pages/HomePage';
 import ChallengePage from './pages/ChallengePage';
 import CustomPage from './pages/CustomPage';
 import SettingsPage from './pages/SettingsPage';
+import useAnalytics from './hooks/useAnalytics';
+
 function App() {
+  useAnalytics();
+
   return (
     // <Router>
       <Routes>

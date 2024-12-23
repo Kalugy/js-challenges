@@ -391,7 +391,7 @@
     "type": "memorize",
     "dificult": "easy",
     "method": "array",
-    "function": "Array.at()",
+    "function": ".at()",
     "instruction": "Given the array [10, 20, 30, 40], use `at()` to access the third element (index 2).",
     "expectedResult": 30,
     "template": "function main(arr=[10, 20, 30, 40]) {\n  // Your code here\n  return '';\n}",
@@ -403,7 +403,7 @@
     "type": "memorize",
     "dificult": "easy",
     "method": "array",
-    "function": "Array.concat()",
+    "function": ".concat()",
     "instruction": "Combine the arrays [1, 2] and [3, 4] using `concat()`.",
     "expectedResult": [
       1,
@@ -420,7 +420,7 @@
     "type": "memorize",
     "dificult": "medium",
     "method": "array",
-    "function": "Array.copyWithin(target, start)",
+    "function": ".copyWithin(target, start)",
     "instruction": "Given the array [1, 2, 3, 4, 5], use `copyWithin()` to copy elements starting at index 0 to index 3.",
     "expectedResult": [
       1,
@@ -438,7 +438,7 @@
     "type": "memorize",
     "dificult": "medium",
     "method": "array",
-    "function": "Array.entries()",
+    "function": ".entries()",
     "instruction": "Given the array ['a', 'b', 'c'], use `entries()` to return an iterator of index-value pairs.",
     "expectedResult": [
       [
@@ -475,7 +475,7 @@
     "type": "memorize",
     "dificult": "easy",
     "method": "array",
-    "function": "Array.fill()",
+    "function": ".fill()",
     "instruction": "Fill the array [1, 2, 3, 4] with the value 0 from index 1 to 3 using `fill()`.",
     "expectedResult": [
       1,
@@ -484,7 +484,7 @@
       4
     ],
     "template": "function main(arr=[1, 2, 3, 4]) {\n  // Your code here\n  return '';\n}",
-    "hint": "The `fill()` method changes all elements in a range to a static value. \narray.fill(value, start, end)",
+    "hint": "The `fill()` method changes all elements in a range to a static value. \narr.fill(value, start, end)",
     "points": "1"
   },
   {
@@ -492,7 +492,7 @@
     "type": "memorize",
     "dificult": "medium",
     "method": "array",
-    "function": "Array.filter()",
+    "function": ".filter()",
     "instruction": "Filter out all odd numbers from the array [1, 2, 3, 4, 5] using `filter()`.",
     "expectedResult": [
       2,
@@ -507,7 +507,7 @@
     "type": "memorize",
     "dificult": "medium",
     "method": "array",
-    "function": "Array.find()",
+    "function": ".find()",
     "instruction": "Find the first number greater than 10 in the array [5, 12, 8, 130, 44] using `find()`.",
     "expectedResult": 12,
     "template": "function main(arr=[5, 12, 8, 130, 44]) {\n  // Your code here\n  return '';\n}",
@@ -519,7 +519,7 @@
     "type": "memorize",
     "dificult": "medium",
     "method": "array",
-    "function": "Array.findIndex()",
+    "function": ".findIndex()",
     "instruction": "Find the index of the first number greater than 10 in the array [5, 12, 8, 130, 44] using `findIndex()`.",
     "expectedResult": 1,
     "template": "function main(arr=[5, 12, 8, 130, 44]) {\n  // Your code here\n  return '';\n}",
@@ -531,7 +531,7 @@
     "type": "memorize",
     "dificult": "medium",
     "method": "array",
-    "function": "Array.findLast()",
+    "function": ".findLast()",
     "instruction": "Find the last number greater than 10 in the array [5, 12, 8, 130, 44] using `findLast()`.",
     "expectedResult": 44,
     "template": "function main(arr=[5, 12, 8, 130, 44]) {\n  // Your code here\n  return '';\n}",
@@ -543,7 +543,7 @@
     "type": "memorize",
     "dificult": "medium",
     "method": "array",
-    "function": "Array.findLastIndex()",
+    "function": ".findLastIndex()",
     "instruction": "Find the index of the last number greater than 10 in the array [5, 12, 8, 130, 44] using `findLastIndex()`.",
     "expectedResult": 4,
     "template": "function main(arr=[5, 12, 8, 130, 44]) {\n  // Your code here\n  return '';\n}",
@@ -555,7 +555,7 @@
     "type": "memorize",
     "dificult": "medium",
     "method": "array",
-    "function": "Array.flat()",
+    "function": ".flat()",
     "instruction": "Flatten the array [1, [2, [3, [4]]]] one level deep using `flat()`.",
     "expectedResult": [
       1,
@@ -576,7 +576,7 @@
     "type": "memorize",
     "dificult": "medium",
     "method": "array",
-    "function": "Array.flatMap()",
+    "function": ".flatMap()",
     "instruction": "Map each number in [1, 2, 3] to an array containing the number and its square, then flatten the result using `flatMap()`.",
     "expectedResult": [
       1,
@@ -595,7 +595,7 @@
     "type": "memorize",
     "dificult": "easy",
     "method": "array",
-    "function": "Array.forEach()",
+    "function": ".forEach()",
     "instruction": "Log each number in the array [1, 2, 3] to the console using `forEach()`.",
     "expectedResult": "Logs: 1, 2, 3",
     "template": "function main(arr=[1, 2, 3]) {\n  // Your code here\n}",
@@ -607,7 +607,7 @@
     "type": "memorize",
     "dificult": "easy",
     "method": "array",
-    "function": "Array.includes()",
+    "function": ".includes()",
     "instruction": "Check if the array [1, 2, 3, 4] includes the number 3 using `includes()`.",
     "expectedResult": true,
     "template": "function main(arr=[1, 2, 3, 4]) {\n  // Your code here\n  return '';\n}",
@@ -619,7 +619,7 @@
     "type": "memorize",
     "dificult": "easy",
     "method": "array",
-    "function": "Array.indexOf()",
+    "function": ".indexOf()",
     "instruction": "Find the index of the first occurrence of the number 3 in the array [1, 2, 3, 4, 3] using `indexOf()`.",
     "expectedResult": 2,
     "template": "function main(arr=[1, 2, 3, 4, 3]) {\n  // Your code here\n  return '';\n}",
@@ -631,7 +631,7 @@
     "type": "memorize",
     "dificult": "easy",
     "method": "array",
-    "function": "Array.join()",
+    "function": ".join()",
     "instruction": "Join all elements of the array ['a', 'b', 'c'] into a single string, separated by '-' using `join()`.",
     "expectedResult": "a-b-c",
     "template": "function main(arr=['a', 'b', 'c']) {\n  // Your code here\n  return '';\n}",
@@ -643,7 +643,7 @@
     "type": "memorize",
     "dificult": "medium",
     "method": "array",
-    "function": "Array.keys()",
+    "function": ".keys()",
     "instruction": "Return an iterator of the keys (indexes) of the array ['a', 'b', 'c'] using `keys()`.",
     "expectedResult": [
       0,
@@ -651,7 +651,7 @@
       2
     ],
     "template": "function main(arr=['a', 'b', 'c']) {\n  // Your code here\n  return '';\n}",
-    "hint": "The `keys()` method returns an iterator of array indexes. Use `Array.from()` to convert it to an array.",
+    "hint": "The `keys()` method returns an iterator of array indexes. Use `Array.from()` to convert it to an arr.",
     "points": "2"
   },
   {
@@ -659,11 +659,11 @@
     "type": "memorize",
     "dificult": "easy",
     "method": "array",
-    "function": "Array.lastIndexOf()",
+    "function": ".lastIndexOf()",
     "instruction": "Find the index of the last occurrence of the number 3 in the array [1, 2, 3, 4, 3] using `lastIndexOf()`.",
     "expectedResult": 4,
     "template": "function main(arr=[1, 2, 3, 4, 3]) {\n  // Your code here\n  return '';\n}",
-    "hint": "The `lastIndexOf()` method returns the last index where the value occurs. \narray.lastIndexOf(value)",
+    "hint": "The `lastIndexOf()` method returns the last index where the value occurs. \narr.lastIndexOf(value)",
     "points": "1"
   },
   {
@@ -671,7 +671,7 @@
     "type": "memorize",
     "dificult": "medium",
     "method": "array",
-    "function": "Array.map()",
+    "function": ".map()",
     "instruction": "Create a new array by squaring each number in [1, 2, 3] using `map()`.",
     "expectedResult": [
       1,
@@ -679,7 +679,7 @@
       9
     ],
     "template": "function main(arr=[1, 2, 3]) {\n  // Your code here\n  return '';\n}",
-    "hint": "The `map()` method creates a new array by applying a function to each element. \narray.map(callback)",
+    "hint": "The `map()` method creates a new array by applying a function to each element. \narr.map(callback)",
     "points": "2"
   },
   {
@@ -687,11 +687,11 @@
     "type": "memorize",
     "dificult": "easy",
     "method": "array",
-    "function": "Array.pop()",
+    "function": ".pop()",
     "instruction": "Remove the last element from the array [1, 2, 3] using `pop()`.",
     "expectedResult": 3,
     "template": "function main(arr=[1, 2, 3]) {\n  // Your code here\n  return '';\n}",
-    "hint": "The `pop()` method removes the last element of an array and returns it. \narray.pop()",
+    "hint": "The `pop()` method removes the last element of an array and returns it. \narr.pop()",
     "points": "1"
   },
   {
@@ -699,7 +699,7 @@
     "type": "memorize",
     "dificult": "easy",
     "method": "array",
-    "function": "Array.push()",
+    "function": ".push()",
     "instruction": "Add the number 4 to the array [1, 2, 3] using `push()`.",
     "expectedResult": [
       1,
@@ -708,7 +708,7 @@
       4
     ],
     "template": "function main(arr=[1, 2, 3]) {\n  // Your code here\n  return '';\n}",
-    "hint": "The `push()` method adds one or more elements to the end of an array. \narray.push(value)",
+    "hint": "The `push()` method adds one or more elements to the end of an array. \narr.push(value)",
     "points": "1"
   },
   {
@@ -716,7 +716,7 @@
     "type": "memorize",
     "dificult": "medium",
     "method": "array",
-    "function": "Array.reduce()",
+    "function": ".reduce()",
     "instruction": "Calculate the sum of all numbers in the array [1, 2, 3, 4] using `reduce()`.",
     "expectedResult": 10,
     "template": "function main(arr=[1, 2, 3, 4]) {\n  // Your code here\n  return '';\n}",
@@ -728,7 +728,7 @@
     "type": "memorize",
     "dificult": "medium",
     "method": "array",
-    "function": "Array.reverse()",
+    "function": ".reverse()",
     "instruction": "Reverse the array [1, 2, 3, 4] using `reverse()`.",
     "expectedResult": [
       4,
@@ -745,7 +745,7 @@
     "type": "memorize",
     "dificult": "easy",
     "method": "array",
-    "function": "Array.shift()",
+    "function": ".shift()",
     "instruction": "Remove the first element of the array [1, 2, 3] using `shift()`.",
     "expectedResult": [
       2,
@@ -760,7 +760,7 @@
     "type": "memorize",
     "dificult": "easy",
     "method": "array",
-    "function": "Array.slice()",
+    "function": ".slice()",
     "instruction": "Extract the subarray [2, 3] from the array [1, 2, 3, 4] using `slice()`.",
     "expectedResult": [
       2,
@@ -775,7 +775,7 @@
     "type": "memorize",
     "dificult": "medium",
     "method": "array",
-    "function": "Array.some()",
+    "function": ".some()",
     "instruction": "Check if any number in the array [1, 2, 3, 4] is greater than 3 using `some()`.",
     "expectedResult": true,
     "template": "function main(arr=[1, 2, 3, 4]) {\n  // Your code here\n  return '';\n}",
@@ -787,7 +787,7 @@
     "type": "memorize",
     "dificult": "medium",
     "method": "array",
-    "function": "Array.sort()",
+    "function": ".sort()",
     "instruction": "Sort the array [3, 1, 4, 2] in ascending order using `sort()`.",
     "expectedResult": [
       1,
@@ -804,7 +804,7 @@
     "type": "memorize",
     "dificult": "medium",
     "method": "array",
-    "function": "Array.splice()",
+    "function": ".splice()",
     "instruction": "Remove 2 elements starting at index 1 in the array [1, 2, 3, 4] using `splice()`.",
     "expectedResult": [
       1,
@@ -819,7 +819,7 @@
     "type": "memorize",
     "dificult": "medium",
     "method": "array",
-    "function": "Array.toLocaleString()",
+    "function": ".toLocaleString()",
     "instruction": "Convert the array [1000, 'a'] to a localized string using `toLocaleString()`.",
     "expectedResult": "1,000,a",
     "template": "function main(arr=[1000, 'a']) {\n  // Your code here\n  return '';\n}",
@@ -831,7 +831,7 @@
     "type": "memorize",
     "dificult": "easy",
     "method": "array",
-    "function": "Array.toReversed()",
+    "function": ".toReversed()",
     "instruction": "Return a reversed version of the array [1, 2, 3, 4] using `toReversed()`.",
     "expectedResult": [
       4,
@@ -848,7 +848,7 @@
     "type": "memorize",
     "dificult": "easy",
     "method": "array",
-    "function": "Array.toSorted()",
+    "function": ".toSorted()",
     "instruction": "Return a sorted version of the array [3, 1, 4, 2] using `toSorted()`.",
     "expectedResult": [
       1,
@@ -865,7 +865,7 @@
     "type": "memorize",
     "dificult": "easy",
     "method": "array",
-    "function": "Array.toSpliced()",
+    "function": ".toSpliced()",
     "instruction": "Remove 2 elements starting at index 1 from the array [1, 2, 3, 4] using `toSpliced()`.",
     "expectedResult": [
       1,
@@ -880,11 +880,11 @@
     "type": "memorize",
     "dificult": "easy",
     "method": "array",
-    "function": "Array.toString()",
+    "function": ".toString()",
     "instruction": "Convert the array [1, 2, 3] to a string using `toString()`.",
     "expectedResult": "1,2,3",
     "template": "function main(arr=[1, 2, 3]) {\n  // Your code here\n  return '';\n}",
-    "hint": "The `toString()` method converts an array into a string. \narray.toString()",
+    "hint": "The `toString()` method converts an array into a string. \narr.toString()",
     "points": "1"
   },
   {
@@ -892,7 +892,7 @@
     "type": "memorize",
     "dificult": "easy",
     "method": "array",
-    "function": "Array.unshift()",
+    "function": ".unshift()",
     "instruction": "Add the number 0 to the beginning of the array [1, 2, 3] using `unshift()`.",
     "expectedResult": [
       0,
@@ -909,7 +909,7 @@
     "type": "memorize",
     "dificult": "medium",
     "method": "array",
-    "function": "Array.values()",
+    "function": ".values()",
     "instruction": "Return an iterator of values from the array ['a', 'b', 'c'] using `values()`.",
     "expectedResult": [
       "a",
@@ -925,7 +925,7 @@
     "type": "memorize",
     "dificult": "medium",
     "method": "array",
-    "function": "Array.with()",
+    "function": ".with()",
     "instruction": "Replace the element at index 1 with 100 in the array [1, 2, 3] using `with()`.",
     "expectedResult": [
       1,

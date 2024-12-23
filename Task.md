@@ -9,21 +9,36 @@
 
 
 ## Improvements
-- [ ] challenges show methods or not and shorcut
 - [ ] shorcut custom keys so user define their own shorcuts
+- [X] show methods with toggle
+- [X] fix Array challenges with Array or .method in methods
+- [X] always start the input in return or code section
+- [] set up analitics
+
 
 ---
 ## Create crud view to challenges 
 - [ ] Do the complete crud for challenges for now comments
-  - So user view see all challenges
-  - as there is a lot people could filter by challenge
-  - user can edit 
-  - user can delete
+  [X] So user view see all challenges
+  [ ] as there is a lot people could filter by challenge
+  [ ] user can edit 
+  [ ] user can delete
 ---
 ## Improve text size for light and dark themes
 - [ ] text size for light and dark themes
   - fix the change size on dark and light
 
+
+
+
+
+
+
+
+
+
+
+## Done
 ---
 ## Footer
 - [x] integrate footer
