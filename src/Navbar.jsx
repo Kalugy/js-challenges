@@ -4,15 +4,17 @@ import { useTheme } from "./context/ThemeContext";
 import { linkItems } from "./constants/generalContants";
 import ThemeSelectorButtons from "./components/rehusables/themeSelectorButtons";
 import HoverThemeButton from "./components/rehusables/hoverThemeButton";
-
+import useScrollToTop from "./hooks/useScrollToTop";
 const Navbar = () => {
   const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [isScrolled, setScrolled] = useState(false);
   const { theme } = useTheme();
-
+  const scrollToTop = useScrollToTop();
 
   const handleMenuClick = () => {
+    console.log('click')
     setMobileMenuOpen(false); // Close the menu
+    scrollToTop(); // Scroll to top
   };
 
   useEffect(() => {
@@ -65,6 +67,7 @@ const Navbar = () => {
                 key={item.name}
                 to={item.href}
                 className={`font-semibold text-[${theme.textColor}]`}
+                onClick={scrollToTop}
                 //make hover 
               >
                 {item.name}
@@ -83,65 +86,56 @@ const Navbar = () => {
         </button>
       </div>
 
-      {/* Mobile Menu */}
-      <div
-        className={`fixed overflow-y-hidden top-0 left-0 w-full h-full transform transition-transform duration-500 ease-in-out ${
-          isMobileMenuOpen ? "translate-y-0" : "-translate-y-full"
-        } ]`}
-        style={{
-          backgroundColor: isMobileMenuOpen ? theme.secondaryBg : "transparent",
-        }}
-      >
-        <BackgroundCircle />
-          
-        <button
-          onClick={() => setMobileMenuOpen(false)}
-          className={`absolute top-4 right-6 text-3xl text-[${theme.textColor}]`}
-        >
-          ✕
-        </button>
-        <ul className="flex flex-col items-center justify-center gap-6 h-full">
-          {linkItems.map((item) =>
-            item.isButton ? (
-              <></>
-              // <li key={item.name}>
-              //   <a
-              //     href={item.href}
-              //     onClick={handleMenuClick} // Close the menu on click
-              //     className={`px-6 py-3 rounded transition button-${theme} ${themeStyles[theme].navbarText} hover:opacity-90`}
-              //   >
-              //     {item.name}
-              //   </a>
-              // </li>
-            ) : (
-              <li key={item.name}>
-                <NavLink
-                  to={item.href}
-                  onClick={handleMenuClick} // Close the menu on click
-                  className={`text-lg font-semibold text-[${theme.textColor}] transition `}
-                  //hover as well 
-                >
-                  {item.name}
-                </NavLink>
-              </li>
-            )
-          )}
-          <ThemeSelectorButtons/>
-        </ul>
-      </div>
+{/* Mobile Menu */}
+<div
+  className={`fixed top-0 left-0 w-full h-full transition-transform duration-700 ease-in-out ${
+    isMobileMenuOpen ? "translate-y-0" : "-translate-y-full"
+  }`}
+  style={{
+    backgroundColor: theme.secondaryBg,
+    transition: "transform 0.7s ease-in-out, background-color 0.7s ease-in-out",
+  }}
+>
+<button
+  onClick={handleMenuClick} // Ensure this function is properly passed
+  className={`absolute top-4 right-6 text-3xl pointer`}
+  style={{
+    color: theme.textColor,
+    zIndex: 10, // Ensure it's above other elements
+  }}
+>
+  ✕
+</button>
+
+  <ul
+    className={`flex flex-col items-center justify-center gap-6 h-full transition-transform duration-500 ease-in-out ${
+      isMobileMenuOpen ? "translate-y-0" : "-translate-y-12"
+    }`}
+  >
+    {linkItems.map((item) =>
+      item.isButton ? (
+        <></>
+      ) : (
+        <li key={item.name}>
+          <NavLink
+            to={item.href}
+            onClick={handleMenuClick} // Close the menu on click
+            className={`text-lg font-semibold transition-transform duration-300 ease-in-out`}
+            style={{
+              color: theme.textColor,
+            }}
+          >
+            {item.name}
+          </NavLink>
+        </li>
+      )
+    )}
+    <ThemeSelectorButtons />
+  </ul>
+</div>
     </nav>
   );
 };
 
-const BackgroundCircle = () => {
-  return (
-    <div
-      className="absolute top-5 left-5 w-12 h-12 bg-cover rotate-12 bg-center"
-      style={{
-        backgroundImage: "url('/images/newLogo.png')", // Replace with your image path
-      }}
-    ></div>
-  );
-};
 
 export default Navbar;

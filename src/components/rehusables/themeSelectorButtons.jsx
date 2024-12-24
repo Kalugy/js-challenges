@@ -12,7 +12,7 @@ export default function ThemeSelectorButtons() {
         className={`px-4 py-2 rounded text-sm font-medium transition ${
           themeSettings.currentTheme === "light"
             ? "bg-gray-200 text-gray-800 border border-gray-400"
-            : "bg-gray-100 hover:bg-gray-200"
+            : "bg-gray-100 hover:bg-gray-200 text-gray-800"
         }`}
       >
         A

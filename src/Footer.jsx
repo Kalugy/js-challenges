@@ -2,10 +2,11 @@ import React from "react";
 import { useTheme } from "./context/ThemeContext";
 import { linkItems } from "./constants/generalContants";
 import GitHubLink from "./assets/icons/gitHub";
-import ThemeSelectorButtons from "./components/rehusables/themeSelectorButtons";
 import { NavLink } from "react-router-dom";
+import useScrollToTop from "./hooks/useScrollToTop";
 const Footer = () => {
   const { theme } = useTheme();
+  const scrollToTop = useScrollToTop();
 
   return (
     <footer 
@@ -35,6 +36,7 @@ const Footer = () => {
                   <NavLink
                     to={link.href}
                     className="hover:text-blue-400 transition duration-300"
+                    onClick={scrollToTop}
                   >
                     {link.name}
                   </NavLink>

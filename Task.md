@@ -1,21 +1,20 @@
 # TODOS
-## Challenges array should compare efficienly
-- [x] Challenges
-  [X] Challenges array should compare efficienly on submit
-  [x] Fix shortcout submit
-  [x] running fix so running on input change so its not necesary to keep running on push button
-  [X] better UI on input code 
-  [X] better layout to input and running is more easy to see
-
 
 ## Improvements
 - [ ] shorcut custom keys so user define their own shorcuts
 - [X] show methods with toggle
 - [X] fix Array challenges with Array or .method in methods
 - [X] always start the input in return or code section
-- [] set up analitics
+- [X] set up analitics
 
-- [] review celphone views // FIX routing provider
+- [X] review celphone views // FIX routing footer
+- [X] fix redirect scroll top 
+- [X] fix custom table responsive and navbar appears 
+- [X] better animation on close navbar cellphone
+
+
+
+
 ---
 ## Create crud view to challenges 
 - [ ] Do the complete crud for challenges for now comments
@@ -29,6 +28,13 @@
   - fix the change size on dark and light
 
 
+## Challenges array should compare efficienly
+- [x] Challenges
+  [X] Challenges array should compare efficienly on submit
+  [x] Fix shortcout submit
+  [x] running fix so running on input change so its not necesary to keep running on push button
+  [X] better UI on input code 
+  [X] better layout to input and running is more easy to see
 
 
 

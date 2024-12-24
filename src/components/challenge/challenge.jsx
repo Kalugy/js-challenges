@@ -194,7 +194,7 @@ export default function ChallengeComponent() {
                 <FaEyeSlash
                   className="inline-block text-lg"
                   style={{
-                    color: theme.btnColor,
+                    color: theme.btnAlertColor,
                   }}
                 />
               </button>
@@ -213,7 +213,7 @@ export default function ChallengeComponent() {
                 <FaEye 
                   className="inline-block text-lg" 
                   style={{
-                    color: theme.btnColor,
+                    color: theme.btnAlertColor,
                   }}  
                 /> 
               </button>
