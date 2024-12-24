@@ -3,6 +3,7 @@ import { useTheme } from "./context/ThemeContext";
 import { linkItems } from "./constants/generalContants";
 import GitHubLink from "./assets/icons/gitHub";
 import ThemeSelectorButtons from "./components/rehusables/themeSelectorButtons";
+import { NavLink } from "react-router-dom";
 const Footer = () => {
   const { theme } = useTheme();
 
@@ -31,12 +32,12 @@ const Footer = () => {
             <ul className="  flex flex-col md:flex-row gap-2">
               {linkItems.map((link) => (
                 <li key={link.href}>
-                  <a
-                    href={link.href}
+                  <NavLink
+                    to={link.href}
                     className="hover:text-blue-400 transition duration-300"
                   >
                     {link.name}
-                  </a>
+                  </NavLink>
                 </li>
               ))}
             </ul>

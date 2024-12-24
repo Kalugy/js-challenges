@@ -15,7 +15,7 @@
 - [X] always start the input in return or code section
 - [] set up analitics
 
-
+- [] review celphone views // FIX routing provider
 ---
 ## Create crud view to challenges 
 - [ ] Do the complete crud for challenges for now comments
