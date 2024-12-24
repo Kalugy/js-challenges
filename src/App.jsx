@@ -5,6 +5,7 @@ import ChallengePage from './pages/ChallengePage';
 import CustomPage from './pages/CustomPage';
 import SettingsPage from './pages/SettingsPage';
 import useAnalytics from './hooks/useAnalytics';
+import NotFoundPage from './pages/NotFoundPage';
 
 function App() {
   useAnalytics();
@@ -18,6 +19,7 @@ function App() {
           <Route path="/challenge/:id" element={<ChallengePage />} />
           <Route path="/custom" element={<CustomPage />} />
           <Route path="/setting" element={<SettingsPage />} />
+          <Route path="*" element={<NotFoundPage />} /> {/* Fallback route */}
 
         </Route>
       </Routes>

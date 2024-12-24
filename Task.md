@@ -11,6 +11,7 @@
 - [X] fix redirect scroll top 
 - [X] fix custom table responsive and navbar appears 
 - [X] better animation on close navbar cellphone
+- [] fix f5 on sublinks
 
 
 
