@@ -9,6 +9,11 @@ Welcome to the **js JavaScript Exercises** repository! This project is designed 
 - [Folder Structure](#folder-structure)
 - [License](#license)
 
+
+## Live Demos
+
+1. [JS Challenges on Render](https://js-challenges-o369.onrender.com/)
+2. [JS Challenges on Vercel](https://js-challenges-flax.vercel.app/)
 ---
 
 ## Features
