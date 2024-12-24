@@ -5,7 +5,6 @@ const ChallengeList = ({ data, handleEdit, handleDelete }) => {
   const { theme } = useTheme();
   return (
     <div className="shadow rounded p-4 ">
-      <h2 className="text-lg font-semibold mb-4 text-gray-800 dark:text-gray-200">Challenges</h2>
       <div className="overflow-x-auto">
         <table className="w-full border-collapse text-sm md:text-base">
           <thead>
