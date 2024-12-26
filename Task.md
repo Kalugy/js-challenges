@@ -2,6 +2,9 @@
 
 ## Improvements
 - [ ] shorcut custom keys so user define their own shorcuts
+- [ ] review all challenges see that all are working
+- [ ] if all challenges are working start algorithm!!! 
+
 
 ---
 ## Create crud view to challenges 
@@ -14,6 +17,12 @@
 ## Improve text size for light and dark themes
 - [ ] text size for light and dark themes
   - fix the change size on dark and light
+
+
+## Posible feature Improvements 
+- [ ] Feedback section so it could be a form realtime and the data will save into an excel but first finish core challenges
+
+
 
 
 
