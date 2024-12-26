@@ -4,18 +4,6 @@
     "type": "memorize",
     "dificult": "easy",
     "method": "string",
-    "function": "replaceAll()",
-    "instruction": "replaces all occurrences of 'bad' with 'good' in the string 'bad apple, bad banana'",
-    "expectedResult": "good apple, good banana",
-    "template": "function main(str='bad apple, bad banana') {\n  // Your code here\n  return '';\n}",
-    "hint": "The `replaceAll()` method replaces all occurrences of a substring in a string with a new string. Example: 'aabbcc'.replaceAll('b', 'x') returns 'aaxxcc'.",
-    "points": "1"
-  },
-  {
-    "id": "2",
-    "type": "memorize",
-    "dificult": "easy",
-    "method": "string",
     "function": "length",
     "instruction": "given 'Hello world!' return the size 12",
     "expectedResult": 12,
@@ -24,19 +12,19 @@
     "points": "1"
   },
   {
-    "id": "3",
+    "id": "2",
     "type": "memorize",
     "dificult": "easy",
     "method": "string",
-    "function": "charAt(index)",
+    "function": ".at(index) or charAt(index)",
     "instruction": "given 'Hello!' return the letter 'o' included in the text",
     "expectedResult": "o",
     "template": "function main(str='Hello!') {\n  // Your code here\n  return '';\n}",
-    "hint": "The `.charAt(index)` method returns the character at a given position in a string text.charAt(0)",
+    "hint": "The `.at(index) or .charAt(index)` method returns the character at a given position in a string str.at(4) str.charAt(4)",
     "points": "1"
   },
   {
-    "id": "4",
+    "id": "3",
     "type": "memorize",
     "dificult": "easy",
     "method": "string",
@@ -48,19 +36,7 @@
     "points": "1"
   },
   {
-    "id": "5",
-    "type": "memorize",
-    "dificult": "easy",
-    "method": "string",
-    "function": "at(index)",
-    "instruction": "given 'Learning Javascript!' return the J",
-    "expectedResult": "J",
-    "template": "function main(str='Learning Javascript!') {\n  // Your code here\n  return '';\n}",
-    "hint": "The `.at(index)` Get the index letter of a string name = 'js is good' name.at(0). return j",
-    "points": "1"
-  },
-  {
-    "id": "6",
+    "id": "4",
     "type": "memorize",
     "dificult": "easy",
     "method": "string",
@@ -72,7 +48,7 @@
     "points": "1"
   },
   {
-    "id": "7",
+    "id": "5",
     "type": "memorize",
     "dificult": "easy",
     "method": "string",
@@ -84,7 +60,7 @@
     "points": "1"
   },
   {
-    "id": "8",
+    "id": "6",
     "type": "memorize",
     "dificult": "easy",
     "method": "string",
@@ -96,7 +72,7 @@
     "points": "1"
   },
   {
-    "id": "9",
+    "id": "7",
     "type": "memorize",
     "dificult": "easy",
     "method": "string",
@@ -108,7 +84,7 @@
     "points": "1"
   },
   {
-    "id": "10",
+    "id": "8",
     "type": "memorize",
     "dificult": "easy",
     "method": "string",
@@ -120,7 +96,7 @@
     "points": "1"
   },
   {
-    "id": "11",
+    "id": "9",
     "type": "memorize",
     "dificult": "easy",
     "method": "string",
@@ -132,7 +108,7 @@
     "points": "1"
   },
   {
-    "id": "12",
+    "id": "10",
     "type": "memorize",
     "dificult": "easy",
     "method": "string",
@@ -144,7 +120,7 @@
     "points": "1"
   },
   {
-    "id": "13",
+    "id": "11",
     "type": "memorize",
     "dificult": "easy",
     "method": "string",
@@ -156,31 +132,19 @@
     "points": "1"
   },
   {
-    "id": "14",
+    "id": "12",
     "type": "memorize",
     "dificult": "easy",
     "method": "string",
-    "function": "slice(start, end)",
+    "function": "substring(start, end) or slice(start, end)",
     "instruction": "Given 'I am learning js methods', extract the substring 'learning'.",
     "expectedResult": "learning",
     "template": "function main(str='I am learning js methods') {\n  // Your code here\n  return '';\n}",
-    "hint": "The `slice(start, end)` method extracts a section of a string and returns it as a new string. \nstring.slice(start, end)",
+    "hint": "The `substring(start, end)` or slice(start, end) method returns the part of the string between start and end indices. \nstring.substring(start, end)",
     "points": "1"
   },
   {
-    "id": "15",
-    "type": "memorize",
-    "dificult": "easy",
-    "method": "string",
-    "function": "substring(start, end)",
-    "instruction": "Given 'I am learning js methods', extract the substring 'learning'.",
-    "expectedResult": "learning",
-    "template": "function main(str='I am learning js methods') {\n  // Your code here\n  return '';\n}",
-    "hint": "The `substring(start, end)` method returns the part of the string between start and end indices. \nstring.substring(start, end)",
-    "points": "1"
-  },
-  {
-    "id": "16",
+    "id": "13",
     "type": "memorize",
     "dificult": "easy",
     "method": "string",
@@ -192,7 +156,7 @@
     "points": "1"
   },
   {
-    "id": "17",
+    "id": "14",
     "type": "memorize",
     "dificult": "easy",
     "method": "string",
@@ -204,7 +168,7 @@
     "points": "1"
   },
   {
-    "id": "18",
+    "id": "15",
     "type": "memorize",
     "dificult": "easy",
     "method": "string",
@@ -216,7 +180,7 @@
     "points": "1"
   },
   {
-    "id": "19",
+    "id": "16",
     "type": "memorize",
     "dificult": "medium",
     "method": "string",
@@ -228,7 +192,7 @@
     "points": "2"
   },
   {
-    "id": "20",
+    "id": "17",
     "type": "memorize",
     "dificult": "medium",
     "method": "string",
@@ -240,7 +204,7 @@
     "points": "2"
   },
   {
-    "id": "21",
+    "id": "18",
     "type": "memorize",
     "dificult": "medium",
     "method": "string",
@@ -252,7 +216,7 @@
     "points": "2"
   },
   {
-    "id": "22",
+    "id": "19",
     "type": "memorize",
     "dificult": "medium",
     "method": "string",
@@ -264,7 +228,7 @@
     "points": "2"
   },
   {
-    "id": "23",
+    "id": "20",
     "type": "memorize",
     "dificult": "medium",
     "method": "string",
@@ -276,7 +240,7 @@
     "points": "2"
   },
   {
-    "id": "24",
+    "id": "21",
     "type": "memorize",
     "dificult": "easy",
     "method": "string",
@@ -293,7 +257,7 @@
     "points": "1"
   },
   {
-    "id": "25",
+    "id": "22",
     "type": "memorize",
     "dificult": "easy",
     "method": "string",
@@ -305,7 +269,7 @@
     "points": "1"
   },
   {
-    "id": "26",
+    "id": "23",
     "type": "memorize",
     "dificult": "easy",
     "method": "string",
@@ -313,11 +277,11 @@
     "instruction": "Given 'I am learning js methods', search for the first occurrence of the word 'learning' and return its index.",
     "expectedResult": 5,
     "template": "function main(str='I am learning js methods') {\n  // Your code here\n  return '';\n}",
-    "hint": "The `search()` method executes a search for a match between a regular expression and this string and returns the index. \n string.search(/text/g)",
+    "hint": "The `search()` method executes a search for a match between a regular expression and this string and returns the index. \n string.search(/text/)",
     "points": "1"
   },
   {
-    "id": "27",
+    "id": "24",
     "type": "memorize",
     "dificult": "easy",
     "method": "string",
@@ -325,15 +289,15 @@
     "instruction": "Given 'I am learning js methods', use a regular expression to find all words containing 'ing'.",
     "expectedResult": "['learning']",
     "template": "function main(str='I am learning js methods') {\n  // Your code here\n  return '';\n}",
-    "hint": "The `match()` method retrieves the result of matching a string against a regular expression. \nstring.match(/regex/)",
+    "hint": "The `match()` method retrieves the result of matching a string against a regular expression.\nstr.match(/\\b\\w*ing\\b/g) // \\b - Word boundary to ensure 'ing' is part of a word.\n\\w* - Matches zero or more word characters before 'ing'.\ning - The literal substring 'ing'.\n\\b - Word boundary to ensure 'ing' ends at a word boundary.\ng - Global flag to find all matches in the string.",
     "points": "1"
   },
   {
-    "id": "28",
+    "id": "25",
     "type": "memorize",
     "dificult": "medium",
     "method": "string",
-    "function": "matchAll(/regex/)",
+    "function": "str.matchAll(/regex/)",
     "instruction": "Given 'I am learning js methods', use a regular expression to find all words and return an iterator.",
     "expectedResult": "[Iterator]",
     "template": "function main(str='I am learning js methods') {\n  // Your code here\n  return '';\n}",
@@ -341,7 +305,7 @@
     "points": "2"
   },
   {
-    "id": "29",
+    "id": "26",
     "type": "memorize",
     "dificult": "easy",
     "method": "array",
@@ -359,7 +323,7 @@
     "points": "1"
   },
   {
-    "id": "30",
+    "id": "27",
     "type": "memorize",
     "dificult": "easy",
     "method": "array",
@@ -371,7 +335,7 @@
     "points": "1"
   },
   {
-    "id": "31",
+    "id": "28",
     "type": "memorize",
     "dificult": "easy",
     "method": "array",
@@ -387,7 +351,7 @@
     "points": "1"
   },
   {
-    "id": "32",
+    "id": "29",
     "type": "memorize",
     "dificult": "easy",
     "method": "array",
@@ -399,7 +363,7 @@
     "points": "1"
   },
   {
-    "id": "33",
+    "id": "30",
     "type": "memorize",
     "dificult": "easy",
     "method": "array",
@@ -416,7 +380,7 @@
     "points": "1"
   },
   {
-    "id": "34",
+    "id": "31",
     "type": "memorize",
     "dificult": "medium",
     "method": "array",
@@ -434,7 +398,7 @@
     "points": "2"
   },
   {
-    "id": "35",
+    "id": "32",
     "type": "memorize",
     "dificult": "medium",
     "method": "array",
@@ -459,7 +423,7 @@
     "points": "2"
   },
   {
-    "id": "36",
+    "id": "33",
     "type": "memorize",
     "dificult": "easy",
     "method": "array",
@@ -471,7 +435,7 @@
     "points": "1"
   },
   {
-    "id": "37",
+    "id": "34",
     "type": "memorize",
     "dificult": "easy",
     "method": "array",
@@ -488,7 +452,7 @@
     "points": "1"
   },
   {
-    "id": "38",
+    "id": "35",
     "type": "memorize",
     "dificult": "medium",
     "method": "array",
@@ -503,7 +467,7 @@
     "points": "2"
   },
   {
-    "id": "39",
+    "id": "36",
     "type": "memorize",
     "dificult": "medium",
     "method": "array",
@@ -515,7 +479,7 @@
     "points": "2"
   },
   {
-    "id": "40",
+    "id": "37",
     "type": "memorize",
     "dificult": "medium",
     "method": "array",
@@ -527,7 +491,7 @@
     "points": "2"
   },
   {
-    "id": "41",
+    "id": "38",
     "type": "memorize",
     "dificult": "medium",
     "method": "array",
@@ -539,7 +503,7 @@
     "points": "2"
   },
   {
-    "id": "42",
+    "id": "39",
     "type": "memorize",
     "dificult": "medium",
     "method": "array",
@@ -551,7 +515,7 @@
     "points": "2"
   },
   {
-    "id": "43",
+    "id": "40",
     "type": "memorize",
     "dificult": "medium",
     "method": "array",
@@ -572,7 +536,7 @@
     "points": "2"
   },
   {
-    "id": "44",
+    "id": "41",
     "type": "memorize",
     "dificult": "medium",
     "method": "array",
@@ -591,7 +555,7 @@
     "points": "2"
   },
   {
-    "id": "45",
+    "id": "42",
     "type": "memorize",
     "dificult": "easy",
     "method": "array",
@@ -603,7 +567,7 @@
     "points": "1"
   },
   {
-    "id": "46",
+    "id": "43",
     "type": "memorize",
     "dificult": "easy",
     "method": "array",
@@ -615,7 +579,7 @@
     "points": "1"
   },
   {
-    "id": "47",
+    "id": "44",
     "type": "memorize",
     "dificult": "easy",
     "method": "array",
@@ -627,7 +591,7 @@
     "points": "1"
   },
   {
-    "id": "48",
+    "id": "45",
     "type": "memorize",
     "dificult": "easy",
     "method": "array",
@@ -639,7 +603,7 @@
     "points": "1"
   },
   {
-    "id": "49",
+    "id": "46",
     "type": "memorize",
     "dificult": "medium",
     "method": "array",
@@ -655,7 +619,7 @@
     "points": "2"
   },
   {
-    "id": "50",
+    "id": "47",
     "type": "memorize",
     "dificult": "easy",
     "method": "array",
@@ -667,7 +631,7 @@
     "points": "1"
   },
   {
-    "id": "51",
+    "id": "48",
     "type": "memorize",
     "dificult": "medium",
     "method": "array",
@@ -683,7 +647,7 @@
     "points": "2"
   },
   {
-    "id": "52",
+    "id": "49",
     "type": "memorize",
     "dificult": "easy",
     "method": "array",
@@ -695,7 +659,7 @@
     "points": "1"
   },
   {
-    "id": "53",
+    "id": "50",
     "type": "memorize",
     "dificult": "easy",
     "method": "array",
@@ -712,7 +676,7 @@
     "points": "1"
   },
   {
-    "id": "54",
+    "id": "51",
     "type": "memorize",
     "dificult": "medium",
     "method": "array",
@@ -724,7 +688,7 @@
     "points": "2"
   },
   {
-    "id": "55",
+    "id": "52",
     "type": "memorize",
     "dificult": "medium",
     "method": "array",
@@ -741,7 +705,7 @@
     "points": "1"
   },
   {
-    "id": "56",
+    "id": "53",
     "type": "memorize",
     "dificult": "easy",
     "method": "array",
@@ -756,7 +720,7 @@
     "points": "1"
   },
   {
-    "id": "57",
+    "id": "54",
     "type": "memorize",
     "dificult": "easy",
     "method": "array",
@@ -771,7 +735,7 @@
     "points": "1"
   },
   {
-    "id": "58",
+    "id": "55",
     "type": "memorize",
     "dificult": "medium",
     "method": "array",
@@ -783,7 +747,7 @@
     "points": "2"
   },
   {
-    "id": "59",
+    "id": "56",
     "type": "memorize",
     "dificult": "medium",
     "method": "array",
@@ -800,7 +764,7 @@
     "points": "2"
   },
   {
-    "id": "60",
+    "id": "57",
     "type": "memorize",
     "dificult": "medium",
     "method": "array",
@@ -815,7 +779,7 @@
     "points": "2"
   },
   {
-    "id": "61",
+    "id": "58",
     "type": "memorize",
     "dificult": "medium",
     "method": "array",
@@ -827,7 +791,7 @@
     "points": "2"
   },
   {
-    "id": "62",
+    "id": "59",
     "type": "memorize",
     "dificult": "easy",
     "method": "array",
@@ -844,7 +808,7 @@
     "points": "1"
   },
   {
-    "id": "63",
+    "id": "60",
     "type": "memorize",
     "dificult": "easy",
     "method": "array",
@@ -861,7 +825,7 @@
     "points": "1"
   },
   {
-    "id": "64",
+    "id": "61",
     "type": "memorize",
     "dificult": "easy",
     "method": "array",
@@ -876,7 +840,7 @@
     "points": "1"
   },
   {
-    "id": "65",
+    "id": "62",
     "type": "memorize",
     "dificult": "easy",
     "method": "array",
@@ -888,7 +852,7 @@
     "points": "1"
   },
   {
-    "id": "66",
+    "id": "63",
     "type": "memorize",
     "dificult": "easy",
     "method": "array",
@@ -905,7 +869,7 @@
     "points": "1"
   },
   {
-    "id": "67",
+    "id": "64",
     "type": "memorize",
     "dificult": "medium",
     "method": "array",
@@ -921,7 +885,7 @@
     "points": "2"
   },
   {
-    "id": "68",
+    "id": "65",
     "type": "memorize",
     "dificult": "medium",
     "method": "array",
@@ -937,7 +901,7 @@
     "points": "2"
   },
   {
-    "id": "69",
+    "id": "66",
     "type": "memorize",
     "dificult": "medium",
     "method": "object",
@@ -949,7 +913,7 @@
     "points": "2"
   },
   {
-    "id": "70",
+    "id": "67",
     "type": "memorize",
     "dificult": "medium",
     "method": "object",
@@ -961,7 +925,7 @@
     "points": "2"
   },
   {
-    "id": "71",
+    "id": "68",
     "type": "memorize",
     "dificult": "hard",
     "method": "object",
@@ -973,7 +937,7 @@
     "points": "3"
   },
   {
-    "id": "72",
+    "id": "69",
     "type": "memorize",
     "dificult": "medium",
     "method": "object",
@@ -985,7 +949,7 @@
     "points": "2"
   },
   {
-    "id": "73",
+    "id": "70",
     "type": "memorize",
     "dificult": "easy",
     "method": "object",
@@ -997,7 +961,7 @@
     "points": "1"
   },
   {
-    "id": "74",
+    "id": "71",
     "type": "memorize",
     "dificult": "easy",
     "method": "object",
@@ -1009,7 +973,7 @@
     "points": "1"
   },
   {
-    "id": "75",
+    "id": "72",
     "type": "memorize",
     "dificult": "medium",
     "method": "object",
@@ -1021,7 +985,7 @@
     "points": "2"
   },
   {
-    "id": "76",
+    "id": "73",
     "type": "memorize",
     "dificult": "medium",
     "method": "object",
@@ -1033,7 +997,7 @@
     "points": "2"
   },
   {
-    "id": "77",
+    "id": "74",
     "type": "memorize",
     "dificult": "medium",
     "method": "object",
@@ -1045,7 +1009,7 @@
     "points": "2"
   },
   {
-    "id": "78",
+    "id": "75",
     "type": "memorize",
     "dificult": "medium",
     "method": "object",
@@ -1057,7 +1021,7 @@
     "points": "2"
   },
   {
-    "id": "79",
+    "id": "76",
     "type": "memorize",
     "dificult": "medium",
     "method": "object",
@@ -1069,7 +1033,7 @@
     "points": "2"
   },
   {
-    "id": "80",
+    "id": "77",
     "type": "memorize",
     "dificult": "medium",
     "method": "object",
@@ -1081,7 +1045,7 @@
     "points": "2"
   },
   {
-    "id": "81",
+    "id": "78",
     "type": "memorize",
     "dificult": "hard",
     "method": "object",
@@ -1093,7 +1057,7 @@
     "points": "3"
   },
   {
-    "id": "82",
+    "id": "79",
     "type": "memorize",
     "dificult": "easy",
     "method": "object",
@@ -1105,7 +1069,7 @@
     "points": "1"
   },
   {
-    "id": "83",
+    "id": "80",
     "type": "memorize",
     "dificult": "easy",
     "method": "object",
@@ -1117,7 +1081,7 @@
     "points": "1"
   },
   {
-    "id": "84",
+    "id": "81",
     "type": "memorize",
     "dificult": "easy",
     "method": "object",
@@ -1129,7 +1093,7 @@
     "points": "1"
   },
   {
-    "id": "85",
+    "id": "82",
     "type": "memorize",
     "dificult": "easy",
     "method": "object",
@@ -1141,7 +1105,7 @@
     "points": "1"
   },
   {
-    "id": "86",
+    "id": "83",
     "type": "memorize",
     "dificult": "easy",
     "method": "object",
@@ -1153,7 +1117,7 @@
     "points": "1"
   },
   {
-    "id": "87",
+    "id": "84",
     "type": "memorize",
     "dificult": "easy",
     "method": "object",
@@ -1165,7 +1129,7 @@
     "points": "1"
   },
   {
-    "id": "88",
+    "id": "85",
     "type": "memorize",
     "dificult": "medium",
     "method": "object",
@@ -1177,7 +1141,7 @@
     "points": "2"
   },
   {
-    "id": "89",
+    "id": "86",
     "type": "memorize",
     "dificult": "medium",
     "method": "object",
@@ -1189,7 +1153,7 @@
     "points": "2"
   },
   {
-    "id": "90",
+    "id": "87",
     "type": "memorize",
     "dificult": "easy",
     "method": "object",

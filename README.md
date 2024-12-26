@@ -37,16 +37,10 @@ git clone ...
 
 ### Navigate to the Project
 ```bash
-cd daily-js-exercises
+cd js-challenges
 ```
 
-### Start Practicing
-1. Open the folder in your code editor.
-2. Navigate to the topic of interest within the `exercises` folder.
-3. Complete the exercises and check your solutions.
-
 ---
-
 ## How to Contribute
 We welcome contributions from the community! Here are some ways you can help:
 - **Add New Exercises**: Submit new challenges to help others.
@@ -75,17 +69,13 @@ We welcome contributions from the community! Here are some ways you can help:
 ## Folder Structure
 ```
 .
-├── exercises
-│   ├── arrays
-│   │   ├── exercise1.js
-│   │   ├── exercise2.js
-│   │   └── solutions
-│   │       └── exercise1-solution.js
-│   ├── objects
-│   ├── strings
+├── src
+│   ├── constant
+│   │   ├── challenges.json
 │   └── ...
 ├── README.md
 └── LICENSE
+└── Task.md  //all tasks in the project bugs, activities, etc...
 ```
 - **exercises**: Contains all daily challenges grouped by topic.
 - **solutions**: Solutions for each exercise are provided for reference.
