@@ -5,6 +5,7 @@
 - [ ] review all challenges see that all are working
 - [ ] if all challenges are working start algorithm!!! 
 
+- [ ] make a select to choose the challenge
 
 ---
 ## Create crud view to challenges 
@@ -13,6 +14,7 @@
   [ ] as there is a lot people could filter by challenge
   [ ] user can edit 
   [ ] user can delete
+
 ---
 ## Improve text size for light and dark themes
 - [ ] text size for light and dark themes

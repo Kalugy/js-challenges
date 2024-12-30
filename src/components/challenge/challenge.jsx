@@ -8,7 +8,7 @@ import HelperButton from "../rehusables/helperButton";
 import SettingsShorcuts from "../settings/SettingsShorcuts";
 import {FaEyeSlash, FaEye} from 'react-icons/fa';
 import { EditorView } from '@codemirror/view';
-
+import Select from "../rehusables/selected";
 
 export default function ChallengeComponent() {
   const editorRef = useRef();
@@ -21,7 +21,38 @@ export default function ChallengeComponent() {
   const [points, setPoints] = useState(0);
   const { theme } = useTheme()
   const currentChallenge = challenges[currentChallengeIndex];
+  const [selectedOption, setSelectedOption] = useState('');
 
+
+  const handleOptionChange = (option) => {
+    setSelectedOption(option);
+    console.log(option,'op')
+    // Validate and handle logic based on the selected option
+    switch (option) {
+      case 'string':
+        setCurrentChallengeIndex(0);
+        setUserCode(challenges[0].template);
+        setFeedback(null)
+        break;
+      case 'array':
+        setCurrentChallengeIndex(25);
+        setUserCode(challenges[25].template);
+        setFeedback(null)
+        break;
+      case 'object':
+        setCurrentChallengeIndex(65);
+        setUserCode(challenges[65].template);
+        setFeedback(null)
+        break;
+      case 'algorithms':
+        setCurrentChallengeIndex(87);
+        setUserCode(challenges[87].template);
+        setFeedback(null)
+        break;
+      default:
+        console.log('Unknown selection');
+    }
+  };
 
   const handleSubmit = () => {
     try {
@@ -157,32 +188,34 @@ export default function ChallengeComponent() {
           backgroundColor: theme.secondaryBg,
         }}
       >
-        <div className="flex gap-3">
-        {/* <button
-          onClick={handlePreviousChallenge}
-          className={`bg-gray-500 text-white px-4 py-2 rounded hover:bg-gray-600 ${
-            currentChallengeIndex === 0 ? "opacity-50 cursor-not-allowed" : ""
-          }`}
-          disabled={currentChallengeIndex === 0}
-        >
-          {'<'}
-        </button> */}
-        <h2 className="text-2xl font-semibold mb-2">Challenge {currentChallenge.id}</h2>
-        <button
-          onClick={handleNextChallenge}
-          className={` px-4 py-2 rounded hover:bg-green-600 ${
-            currentChallengeIndex >= challenges.length - 1 ? "opacity-50 cursor-not-allowed" : ""
-          }`}
-          disabled={currentChallengeIndex >= challenges.length - 1}
-          style={{
-            backgroundColor: theme.btnColor,
-          }}
-        >
-         {'>'}
-        </button>
+        <div className="flex flex-col gap-2 md:flex-row md:justify-between ">
+          {/* <button
+            onClick={handlePreviousChallenge}
+            className={`bg-gray-500 text-white px-4 py-2 rounded hover:bg-gray-600 ${
+              currentChallengeIndex === 0 ? "opacity-50 cursor-not-allowed" : ""
+            }`}
+            disabled={currentChallengeIndex === 0}
+          >
+            {'<'}
+          </button> */}
+          <div className="flex gap-3 ">
+            <h2 className="text-2xl font-semibold mb-2">Challenge {currentChallenge.id}</h2>
+            <button
+              onClick={handleNextChallenge}
+              className={` px-4 py-2 rounded hover:bg-green-600 ${
+                currentChallengeIndex >= challenges.length - 1 ? "opacity-50 cursor-not-allowed" : ""
+              }`}
+              disabled={currentChallengeIndex >= challenges.length - 1}
+              style={{
+                backgroundColor: theme.btnColor,
+              }}
+            >
+            {'>'}
+            </button>
+          </div>
+          <Select selectedOption={selectedOption} setSelectedOption={handleOptionChange} />
         </div>
-        <p className="mb-1"><strong>Type:</strong> {currentChallenge.type}</p>
-        
+        {/* <p className="mb-1"><strong>Type:</strong> {currentChallenge.type}</p> */}
         <p className="mb-1">
           <strong> Method:</strong> 
           {showMethods ? (
