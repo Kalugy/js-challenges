@@ -3,9 +3,9 @@
 ## Improvements
 - [ ] shorcut custom keys so user define their own shorcuts
 - [ ] review all challenges see that all are working
-- [ ] if all challenges are working start algorithm!!! 
+- [ ] review algorithms 
+- [ ] review objects 
 
-- [ ] make a select to choose the challenge
 
 ---
 ## Create crud view to challenges 
@@ -45,6 +45,8 @@
 - [X] fix readme add license
 - [X] fix slice and substring only one 
 - [X] fix replaceall so do not repeat
+- [X] make a select to choose the challenge
+
 ---
 ## Footer
 - [x] integrate footer

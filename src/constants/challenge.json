@@ -551,7 +551,7 @@
       9
     ],
     "template": "function main(arr=[1, 2, 3]) {\n  // Your code here\n  return '';\n}",
-    "hint": "The `flatMap()` method maps and flattens the result into a new array. \narray.flatMap(callback)",
+    "hint": "The `flatMap()` method maps and flattens the result into a new array. \narr.flatMap(callback) arr.flatMap(i => [i, i**2] )",
     "points": "2"
   },
   {
@@ -560,10 +560,10 @@
     "dificult": "easy",
     "method": "array",
     "function": ".forEach()",
-    "instruction": "Log each number in the array [1, 2, 3] to the console using `forEach()`.",
-    "expectedResult": "Logs: 1, 2, 3",
+    "instruction": "Multiply each number in the array [1, 2, 3] to 2 using `forEach()`.",
+    "expectedResult": [2,4,6],
     "template": "function main(arr=[1, 2, 3]) {\n  // Your code here\n}",
-    "hint": "The `forEach()` method executes a function once for each array element. \narray.forEach(callback)",
+    "hint": "The `forEach()` method executes a function once for each array element. \narr.forEach((value, index, array) => {array[index] = value * 2;});",
     "points": "1"
   },
   {
@@ -653,7 +653,10 @@
     "method": "array",
     "function": ".pop()",
     "instruction": "Remove the last element from the array [1, 2, 3] using `pop()`.",
-    "expectedResult": 3,
+    "expectedResult": [
+      1,
+      2
+    ],
     "template": "function main(arr=[1, 2, 3]) {\n  // Your code here\n  return '';\n}",
     "hint": "The `pop()` method removes the last element of an array and returns it. \narr.pop()",
     "points": "1"
@@ -684,7 +687,7 @@
     "instruction": "Calculate the sum of all numbers in the array [1, 2, 3, 4] using `reduce()`.",
     "expectedResult": 10,
     "template": "function main(arr=[1, 2, 3, 4]) {\n  // Your code here\n  return '';\n}",
-    "hint": "The `reduce()` method applies a function against an accumulator to reduce the array to a single value. \narray.reduce(callback, initialValue)",
+    "hint": "The `reduce()` method applies a function against an accumulator to reduce the array to a single value. \narray.reduce(callback, initialValue) arr.reduce((acum, i) => i + acum, 0 );",
     "points": "2"
   },
   {
